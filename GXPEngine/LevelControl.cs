@@ -15,6 +15,7 @@ namespace GXPEngine
         public LevelControl(float _width, float _height) : base("Untitled.png")
         {
             this.collider.isTrigger = false;
+            
             level.CreateLevel("TestMap");
             level.SetXY(0 - this.width / 2, 0 - this.height / 2);
             //level.SetXY(this.width/2, this.height/2);
@@ -24,14 +25,14 @@ namespace GXPEngine
 
         void Update()
         {
-            if (Input.GetKeyDown(Key.RIGHT))
+            if (Input.GetKey(Key.RIGHT))
             {
-                this.rotation -= 90;
+                this.rotation -= 0.5f;
             }
 
-            if (Input.GetKeyDown(Key.LEFT))
+            if (Input.GetKey(Key.LEFT))
             {
-                this.rotation += 90;
+                this.rotation += 0.5f;
             }
         }
     }

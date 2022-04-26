@@ -9,30 +9,40 @@ using TiledMapParser;
 namespace GXPEngine
 {
     
-    class Box : AnimationSprite
+    class Box : Sprite
     {
         public LevelCreation level;
 
+        float fallingSpeed = 1;
+
         Vec2 position;
         static Vec2 velocity = new Vec2(0, 0);
-        static Vec2 gravity = new Vec2(0, 1);
-        public Box(String name, int rows, int cols, TiledObject obj) : base(name, rows, cols, -1, true)
+        Vec2 gravity = new Vec2(0, 1);
+
+        //Sprite sprite = new Sprite("box.png");
+        public Box(TiledObject obj) : base("box.png")
         {
             position.x = obj.X;
             position.y = obj.Y;
             //this.collider.isTrigger = true;
+            SetOrigin(width / 2, height / 2);
         }
 
         private void UpdatePosition()
         {
+            /* if (fallingSpeed <= 15)
+                 fallingSpeed += 1;*/
             velocity += gravity;
             //position += velocity;
             //this.x = position.x;
-            if (MoveUntilCollision(0, velocity.y, level.GetTiles(this)) != null)
+            //this.GetCollisions();
+            MoveUntilCollision(velocity.x, 0, GetCollisions(true, false));
+            if(MoveUntilCollision(0, fallingSpeed, this.GetCollisions(true,false)) != null)
             {
+                fallingSpeed = 0;
                 velocity.y = 0;
             }
-                Console.WriteLine(this.y);
+            Console.WriteLine(this.y);
         }
 
         private void Update()
