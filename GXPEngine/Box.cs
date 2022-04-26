@@ -1,4 +1,5 @@
 ﻿using GXPEngine.Core;
+using GXPEngine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,28 +8,36 @@ using TiledMapParser;
 
 namespace GXPEngine
 {
-    class Box : Sprite
+    
+    class Box : AnimationSprite
     {
+        public LevelCreation level;
+
         Vec2 position;
         static Vec2 velocity = new Vec2(0, 0);
         static Vec2 gravity = new Vec2(0, 1);
-        public Box(TiledObject obj) : base(new Texture2D(16,16))
+        public Box(String name, int rows, int cols, TiledObject obj) : base(name, rows, cols, -1, true)
         {
             position.x = obj.X;
             position.y = obj.Y;
-            this.collider.isTrigger = true;
+            //this.collider.isTrigger = true;
         }
 
         private void UpdatePosition()
         {
-            position += velocity;
-            this.x = position.x;
-            this.y = position.y;
+            velocity += gravity;
+            //position += velocity;
+            //this.x = position.x;
+            if (MoveUntilCollision(0, velocity.y, level.GetTiles(this)) != null)
+            {
+                velocity.y = 0;
+            }
+                Console.WriteLine(this.y);
         }
 
-        private void UpdateVelocity()
+        private void Update()
         {
-            velocity += gravity;
+            UpdatePosition();
         }
     }
 }

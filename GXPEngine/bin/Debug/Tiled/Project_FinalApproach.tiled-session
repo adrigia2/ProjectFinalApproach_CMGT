@@ -11,11 +11,11 @@
             "scaleInDock": 2
         },
         "C:/Users/bolde/Documents/GitHub/GameDesign/GXPEngine2022BB/GXPEngine/bin/Debug/Tiled/Level_1.tmx": {
-            "scale": 0.220703125,
-            "selectedLayer": 0,
+            "scale": 1.5,
+            "selectedLayer": 6,
             "viewCenter": {
-                "x": 2637.0265486725666,
-                "y": 1196.1769911504425
+                "x": 1410,
+                "y": 2160.6666666666665
             }
         },
         "C:/Users/bolde/Documents/GitHub/GameDesign/GXPEngine2022BB/GXPEngine/bin/Debug/Tiled/Level_1.tmx#Alian Tree": {
@@ -31,8 +31,8 @@
             "scale": 0.5,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 2000,
-                "y": 956
+                "x": 2800,
+                "y": 1199
             }
         },
         "C:/Users/bolde/Documents/GitHub/GameDesign/GXPEngine2022BB/GXPEngine/bin/Debug/Tiled/Level_3.tmx#Alian Tree": {
@@ -67,13 +67,13 @@
     "map.width": 60,
     "openFiles": [
         "TestMap.tmx",
-        "C:/Users/bolde/Documents/GitHub/GameDesign/GXPEngine2022BB/GXPEngine/bin/Debug/Tiled/Level_3.tmx"
+        "C:/Users/bolde/Documents/GitHub/GameDesign/GXPEngine2022BB/GXPEngine/bin/Debug/Tiled/Level_1.tmx"
     ],
     "project": "Project_FinalApproach.tiled-project",
     "recentFiles": [
-        "C:/Users/bolde/Documents/GitHub/GameDesign/GXPEngine2022BB/GXPEngine/bin/Debug/Tiled/Level_3.tmx",
+        "C:/Users/bolde/Documents/GitHub/GameDesign/GXPEngine2022BB/GXPEngine/bin/Debug/Tiled/Level_1.tmx",
         "TestMap.tmx",
-        "C:/Users/bolde/Documents/GitHub/GameDesign/GXPEngine2022BB/GXPEngine/bin/Debug/Tiled/Level_1.tmx"
+        "C:/Users/bolde/Documents/GitHub/GameDesign/GXPEngine2022BB/GXPEngine/bin/Debug/Tiled/Level_3.tmx"
     ],
     "tileset.embedInMap": true,
     "tileset.tileSize": {
