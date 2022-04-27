@@ -48,11 +48,11 @@
             "scaleInDock": 1
         },
         "TestMap.tmx": {
-            "scale": 0.75,
+            "scale": 3,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 594.6666666666665,
-                "y": 460
+                "x": 432.83333333333337,
+                "y": 473.3333333333333
             }
         },
         "TestMap.tmx#sheet": {
@@ -66,13 +66,12 @@
     "map.tileWidth": 16,
     "map.width": 60,
     "openFiles": [
-        "TestMap.tmx",
-        "C:/Users/bolde/Documents/GitHub/GameDesign/GXPEngine2022BB/GXPEngine/bin/Debug/Tiled/Level_1.tmx"
+        "TestMap.tmx"
     ],
     "project": "Project_FinalApproach.tiled-project",
     "recentFiles": [
-        "C:/Users/bolde/Documents/GitHub/GameDesign/GXPEngine2022BB/GXPEngine/bin/Debug/Tiled/Level_1.tmx",
         "TestMap.tmx",
+        "C:/Users/bolde/Documents/GitHub/GameDesign/GXPEngine2022BB/GXPEngine/bin/Debug/Tiled/Level_1.tmx",
         "C:/Users/bolde/Documents/GitHub/GameDesign/GXPEngine2022BB/GXPEngine/bin/Debug/Tiled/Level_3.tmx"
     ],
     "tileset.embedInMap": true,

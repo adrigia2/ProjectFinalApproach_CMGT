@@ -8,14 +8,16 @@ using System.Threading.Tasks;
 
 namespace GXPEngine
 {
-    class LevelControl : Sprite
+    public class LevelControl : Sprite
     {
         LevelCreation level = new LevelCreation();
+        //Camera camera;
 
+        public float rotationPlayer = 0;
         public LevelControl(float _width, float _height) : base("Untitled.png")
         {
             this.collider.isTrigger = false;
-            
+
             level.CreateLevel("TestMap");
             level.SetXY(0 - this.width / 2, 0 - this.height / 2);
             level.SetLevelControl(this);
@@ -28,12 +30,13 @@ namespace GXPEngine
         {
             if (Input.GetKey(Key.RIGHT))
             {
-                this.rotation -= 0.5f;
+                rotationPlayer -= 0.5f;
+                //camera.rotation = rotationPlayer;
             }
-
             if (Input.GetKey(Key.LEFT))
             {
-                this.rotation += 0.5f;
+                rotationPlayer += 0.5f;
+                //camera.rotation = rotationPlayer;
             }
         }
     }

@@ -1,12 +1,21 @@
 ﻿using System;
 using GXPEngine; // Allows using Mathf functions
+using GXPEngine.Core;
 
 public struct Vec2
 {
 	public float x;
 	public float y;
 
+	public static Vec2 zero=new Vec2(0,0);
 
+
+	public Vec2(Vector2 vector)
+	{
+		x = vector.x;
+		y = vector.y;
+	}
+	
 	/// <summary>
 	/// Set the values of the vector
 	/// </summary>
@@ -75,6 +84,7 @@ public struct Vec2
 		return Vec2.Normalized(this);
 	}
 
+
 	// TODO: Implement subtract, scale operators
 
 	public static Vec2 operator +(Vec2 left, Vec2 right)
@@ -84,6 +94,11 @@ public struct Vec2
 	public static Vec2 operator -(Vec2 left, Vec2 right)
 	{
 		return new Vec2(left.x - right.x, left.y - right.y);
+	}
+
+	public static Vec2 operator -(Vec2 left)
+	{
+		return new Vec2(-left.x, -left.y);
 	}
 	public static Vec2 operator *(float scale, Vec2 vect)
 	{

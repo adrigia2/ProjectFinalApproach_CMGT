@@ -94,49 +94,8 @@ namespace GXPEngine
             if (sprite is Box box)
             {
                 box.level = this;
-                //if (levelControl != null)
-                //    box.levelControl = levelControl;
-                //else
-                //    throw new Exception("Level control non assegnato");
-                //box.parent = this;
-            }
-            /*if (sprite is Player p)
-            {
-                //need to make sure the player is not in the object layer
-                player = p;
-                player.SetLevel(this);
-                player.parent = this;
-
-                
             }
 
-            if(sprite is Enemy e)
-            {
-                enemy = e;
-                enemy.SetLevel(this);
-                enemy.parent = this;
-            }
-
-            if(sprite is Waypoint w)
-            {
-                waypoints.Add(w);
-            }
-
-            if(sprite is Gate gate)
-            {
-                gate.AddPlayer(this.player);
-            }
-
-            if(sprite is Items item)
-            {
-                item.AddPlayer(this.player);
-                //Console.WriteLine("added player");
-            }
-
-            if(sprite is MagicTree mt)
-            {
-                mt.AddPlayer(this.player);
-            }*/
         }
 
         public List<GameObject> GetTiles(Sprite sprite)
@@ -158,12 +117,19 @@ namespace GXPEngine
             bottomRight.x = Mathf.Clamp(bottomRight.x, 0, map.Width - 1);
             bottomRight.y = Mathf.Clamp(bottomRight.y, 0, map.Height - 1);
 
-            for (int i = (int)topLeft.x - 1; i <= bottomRight.x + 1; i++)
+            try
             {
-                for (int j = (int)topLeft.y - 1; j <= bottomRight.y + 1; j++)
+                for (int i = (int)topLeft.x - 1; i <= bottomRight.x + 1; i++)
                 {
-                    if (gameObjects[i, j] != null) surroundingTiles.Add(gameObjects[i, j]);
+                    for (int j = (int)topLeft.y - 1; j <= bottomRight.y + 1; j++)
+                    {
+                        if (gameObjects[i, j] != null) surroundingTiles.Add(gameObjects[i, j]);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
             Console.WriteLine();
 
