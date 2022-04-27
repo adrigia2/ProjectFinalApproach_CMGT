@@ -12,7 +12,6 @@ namespace GXPEngine
     class Box : Sprite
     {
         public LevelCreation level;
-        public LevelControl levelControl;
 
         Vec2 position;
         static Vec2 velocity = new Vec2(0, 0);
@@ -30,10 +29,8 @@ namespace GXPEngine
 
         private void UpdatePosition()
         {
-            /* if (fallingSpeed <= 15)
-                 fallingSpeed += 1;*/
-
             velocity += gravity;
+
             Vec2 rotateVelocity = velocity;
             rotateVelocity.SetAngleDegrees(-level.levelControl.rotation,90);
 
@@ -41,7 +38,7 @@ namespace GXPEngine
             //this.x = position.x;
             //this.GetCollisions();
 
-            if (MoveUntilCollision(velocity.x, velocity.y, GetCollisions(true, false)) != null)
+            if (MoveUntilCollision(rotateVelocity.x, rotateVelocity.y, GetCollisions(true, false)) != null)
             {
                 velocity.y = -5;
             }
