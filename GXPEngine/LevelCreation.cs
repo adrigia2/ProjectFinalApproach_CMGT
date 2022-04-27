@@ -13,12 +13,16 @@ namespace GXPEngine
         //public Player player;
 
         //Map level;
+
+        public LevelControl levelControl;
+
         TiledLoader loader;
         public String levelName = "TestMap";
 
         GameObject[,] gameObjects;
         private List<GameObject> surroundingTiles = new List<GameObject>();
         private Map map;
+
         public List<GameObject> waypoints = new List<GameObject>();
 
         private SpriteBatch fillingTiles = new SpriteBatch();
@@ -27,6 +31,11 @@ namespace GXPEngine
         public LevelCreation()
         {
 
+        }
+
+        public void SetLevelControl(LevelControl levelControl)
+        {
+            this.levelControl = levelControl;
         }
 
 
@@ -85,6 +94,10 @@ namespace GXPEngine
             if (sprite is Box box)
             {
                 box.level = this;
+                //if (levelControl != null)
+                //    box.levelControl = levelControl;
+                //else
+                //    throw new Exception("Level control non assegnato");
                 //box.parent = this;
             }
             /*if (sprite is Player p)

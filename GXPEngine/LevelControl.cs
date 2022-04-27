@@ -18,6 +18,7 @@ namespace GXPEngine
             
             level.CreateLevel("TestMap");
             level.SetXY(0 - this.width / 2, 0 - this.height / 2);
+            level.SetLevelControl(this);
             //level.SetXY(this.width/2, this.height/2);
             AddChild(level);
             this.SetOrigin(this.width / 2, this.height / 2);

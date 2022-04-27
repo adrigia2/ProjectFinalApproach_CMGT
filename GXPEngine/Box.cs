@@ -8,18 +8,18 @@ using TiledMapParser;
 
 namespace GXPEngine
 {
-    
+
     class Box : Sprite
     {
         public LevelCreation level;
-
-        float fallingSpeed = 1;
+        public LevelControl levelControl;
 
         Vec2 position;
         static Vec2 velocity = new Vec2(0, 0);
-        Vec2 gravity = new Vec2(0, 1);
+        Vec2 gravity = new Vec2(0, 0.1f);
 
         //Sprite sprite = new Sprite("box.png");
+        
         public Box(TiledObject obj) : base("box.png")
         {
             position.x = obj.X;
@@ -32,17 +32,28 @@ namespace GXPEngine
         {
             /* if (fallingSpeed <= 15)
                  fallingSpeed += 1;*/
+
             velocity += gravity;
-            //position += velocity;
+            Vec2 rotateVelocity = velocity;
+            rotateVelocity.SetAngleDegrees(-level.levelControl.rotation,90);
+
+            position += rotateVelocity;
             //this.x = position.x;
             //this.GetCollisions();
-            MoveUntilCollision(velocity.x, 0, GetCollisions(true, false));
-            if(MoveUntilCollision(0, fallingSpeed, this.GetCollisions(true,false)) != null)
+
+            if (MoveUntilCollision(velocity.x, velocity.y, GetCollisions(true, false)) != null)
             {
-                fallingSpeed = 0;
-                velocity.y = 0;
+                velocity.y = -5;
             }
-            Console.WriteLine(this.y);
+
+            SetPositionToScreen();
+            //Console.WriteLine(this.y);
+        }
+
+        public void SetPositionToScreen()
+        {
+            x = position.x;
+            y = position.y;
         }
 
         private void Update()

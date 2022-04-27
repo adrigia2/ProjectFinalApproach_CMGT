@@ -126,9 +126,9 @@ public struct Vec2
 		float min = 0;
 		return Vec2.GetUnitVectorDeg(Utils.Random(min, max));
 	}
-	public void SetAngleDegrees(float degrees)
+	public void SetAngleDegrees(float degrees, float offset=0)
 	{
-		SetAngleRadians(Deg2Rad(degrees));
+		SetAngleRadians(Deg2Rad(degrees+offset));
 	}
 
 	public void SetAngleRadians(float radians)
