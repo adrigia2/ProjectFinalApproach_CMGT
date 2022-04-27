@@ -35,7 +35,7 @@ namespace GXPEngine
             loader = new TiledLoader("Tiled/" + levelName + ".tmx");
             map = loader.map;
             loader.rootObject = this;
-            
+
 
             gameObjects = new GameObject[loader.map.Width, loader.map.Height];
 
@@ -50,12 +50,12 @@ namespace GXPEngine
 
             //Sprite batch
             loader.rootObject = fillingTiles;
-            loader.addColliders = true;
+            loader.addColliders = false;
             loader.LoadTileLayers(0);
 
             loader.rootObject = this;
 
-            loader.addColliders = true;
+            loader.addColliders = false;
 
             loader.LoadTileLayers(1);
 

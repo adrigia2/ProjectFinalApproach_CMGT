@@ -14,8 +14,8 @@
             "scale": 1.5,
             "selectedLayer": 6,
             "viewCenter": {
-                "x": 1410,
-                "y": 2160.6666666666665
+                "x": 2800,
+                "y": 1199.3333333333333
             }
         },
         "C:/Users/bolde/Documents/GitHub/GameDesign/GXPEngine2022BB/GXPEngine/bin/Debug/Tiled/Level_1.tmx#Alian Tree": {
@@ -49,7 +49,7 @@
         },
         "TestMap.tmx": {
             "scale": 0.75,
-            "selectedLayer": 2,
+            "selectedLayer": 3,
             "viewCenter": {
                 "x": 594.6666666666665,
                 "y": 460

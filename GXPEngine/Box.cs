@@ -37,7 +37,7 @@ namespace GXPEngine
             //this.x = position.x;
             //this.GetCollisions();
             MoveUntilCollision(velocity.x, 0, GetCollisions(true, false));
-            if(MoveUntilCollision(0, fallingSpeed, this.GetCollisions(true,false)) != null)
+            if(MoveUntilCollision(0, fallingSpeed, level.GetTiles(this)) != null)
             {
                 fallingSpeed = 0;
                 velocity.y = 0;
