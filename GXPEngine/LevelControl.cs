@@ -10,6 +10,7 @@ namespace GXPEngine
 {
     public class LevelControl : Sprite
     {
+        int state = -1;
         LevelCreation level = new LevelCreation();
         Camera camera;
 
@@ -29,9 +30,9 @@ namespace GXPEngine
             //level.SetXY(this.width/2, this.height/2);
             AddChild(level);
 
-            camera = new Camera(-480, -480, 960, 960);
-
-            game.AddChild(camera);
+            //camera = new Camera(-game.width/2, -game.height / 2, game.width, game.height);
+            //camera.SetScaleXY(2);
+            //game.AddChild(camera);
             //AddChild(camera);
 
 
@@ -40,18 +41,56 @@ namespace GXPEngine
 
         void Update()
         {
+            bool something=false;
             if (Input.GetKeyDown(Key.RIGHT))
             {
+                something = true;
+                state++;
                 rotationPlayer -= 90f;
-                camera.rotation = -rotationPlayer;
+                if (rotationPlayer < 0)
+                    rotation += 360;
+                //camera.rotation = -rotationPlayer;
                 //camera.rotation = rotationPlayer;
             }
             if (Input.GetKeyDown(Key.LEFT))
             {
+                state--;
+                something = true;
                 rotationPlayer += 90f;
-                camera.rotation = -rotationPlayer;
+                if (rotationPlayer == 360)
+                    rotationPlayer = 0;
+                //camera.rotation = -rotationPlayer;
                 //camera.rotation = rotationPlayer;
             }
+            //if (something)
+            //{
+            //    if (state == 4)
+            //        state = 0;
+            //    else
+            //    if (state == -1)
+            //        state = 3;
+
+            //    if (state == 0)
+            //    {
+            //        camera.x += game.width;
+            //    }
+            //    else
+            //    if (state == 1)
+            //    {
+            //        camera.y += game.height;
+            //    }
+            //    else
+            //            if (state == 2)
+            //    {
+            //        camera.x -= game.width;
+            //    }
+            //    if (state == 3)
+            //    {
+            //        camera.y -= game.height;
+            //        state = 0;
+            //    }
+            //}
+
         }
     }
 }

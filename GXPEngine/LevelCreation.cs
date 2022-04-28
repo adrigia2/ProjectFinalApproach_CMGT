@@ -139,9 +139,8 @@ namespace GXPEngine
             extents[2] = InverseTransformPoint(extents[2].x, extents[2].y);
 
 
-
-            Console.WriteLine(extents[0]);
-            Console.WriteLine(extents[2]);
+            //Console.WriteLine(extents[0]);
+            //Console.WriteLine(extents[2]);
             
             int tileSize = map.TileWidth;
 
@@ -170,7 +169,6 @@ namespace GXPEngine
             {
                 Console.WriteLine(ex.Message);
             }
-            Console.WriteLine();
 
 
             //Gizmos.SetColor(0, 1, 0, 1);
