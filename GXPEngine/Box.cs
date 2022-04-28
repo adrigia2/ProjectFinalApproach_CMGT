@@ -11,7 +11,6 @@ namespace GXPEngine
     
     class Box : Sprite
     {
-        
         Arrow _gravityIndicator;
         public LevelCreation level;
 
@@ -38,6 +37,7 @@ namespace GXPEngine
         private void UpdatePosition()
         {
 
+            //please add some comments idk why it jumps so much
             velocity += gravity;
             Vec2 gravityRotated = gravity;
             gravityRotated.RotateDegrees(level.levelControl.rotationPlayer);

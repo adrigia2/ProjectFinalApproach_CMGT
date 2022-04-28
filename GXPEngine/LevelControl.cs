@@ -23,16 +23,11 @@ namespace GXPEngine
             level.SetXY(0 - this.width / 2, 0 - this.height / 2);
             level.SetLevelControl(this);
 
-            //level.SetScaleXY(0.5f);
-            
-            //level.SetXY(this.width/2, this.height/2);
             AddChild(level);
 
-            //camera = new Camera(-game.width / 2, -game.height / 2, game.width, game.height);
-            //camera.SetScaleXY(2);
-            //game.AddChild(camera);
-            //AddChild(camera);
-
+            //setting up the camera was easy, i just moved the level control to 0,0 in MyGame
+            camera = new Camera(0, 0, 960, 960);
+            game.AddChild(camera);
 
             this.SetOrigin(this.width / 2, this.height / 2);
         }
@@ -48,7 +43,7 @@ namespace GXPEngine
                 if (rotationPlayer < 0)
                     rotationPlayer += 360;
                 //camera.rotation = -rotationPlayer;
-                //camera.rotation = rotationPlayer;
+                camera.rotation = rotationPlayer;
             }
             if (Input.GetKeyDown(Key.LEFT))
             {
@@ -57,40 +52,10 @@ namespace GXPEngine
                 rotationPlayer += 90f;
                 if (rotationPlayer == 360)
                     rotationPlayer = 0;
-                //camera.rotation = -rotationPlayer;
-                //camera.rotation = rotationPlayer;
+                camera.rotation = -rotationPlayer;
             }
 
             Console.WriteLine(rotationPlayer);
-            //if (something)
-            //{
-            //    if (state == 4)
-            //        state = 0;
-            //    else
-            //    if (state == -1)
-            //        state = 3;
-
-            //    if (state == 0)
-            //    {
-            //        camera.x += game.width;
-            //    }
-            //    else
-            //    if (state == 1)
-            //    {
-            //        camera.y += game.height;
-            //    }
-            //    else
-            //            if (state == 2)
-            //    {
-            //        camera.x -= game.width;
-            //    }
-            //    if (state == 3)
-            //    {
-            //        camera.y -= game.height;
-            //        state = 0;
-            //    }
-            //}
-
         }
     }
 }
