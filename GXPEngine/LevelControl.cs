@@ -19,8 +19,6 @@ namespace GXPEngine
         {
             this.collider.isTrigger = false;
 
-            
-            
             level.CreateLevel("TestMap2");
             level.SetXY(0 - this.width / 2, 0 - this.height / 2);
             level.SetLevelControl(this);
@@ -30,7 +28,7 @@ namespace GXPEngine
             //level.SetXY(this.width/2, this.height/2);
             AddChild(level);
 
-            //camera = new Camera(-game.width/2, -game.height / 2, game.width, game.height);
+            //camera = new Camera(-game.width / 2, -game.height / 2, game.width, game.height);
             //camera.SetScaleXY(2);
             //game.AddChild(camera);
             //AddChild(camera);
@@ -48,7 +46,7 @@ namespace GXPEngine
                 state++;
                 rotationPlayer -= 90f;
                 if (rotationPlayer < 0)
-                    rotation += 360;
+                    rotationPlayer += 360;
                 //camera.rotation = -rotationPlayer;
                 //camera.rotation = rotationPlayer;
             }
@@ -62,6 +60,8 @@ namespace GXPEngine
                 //camera.rotation = -rotationPlayer;
                 //camera.rotation = rotationPlayer;
             }
+
+            Console.WriteLine(rotationPlayer);
             //if (something)
             //{
             //    if (state == 4)
