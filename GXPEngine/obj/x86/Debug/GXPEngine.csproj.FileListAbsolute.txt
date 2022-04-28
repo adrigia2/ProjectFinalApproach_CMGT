@@ -6,3 +6,11 @@ C:\Users\bolde\Documents\GitHub\ProjectFinalApproach_CMGT\GXPEngine\obj\x86\Debu
 C:\Users\bolde\Documents\GitHub\ProjectFinalApproach_CMGT\GXPEngine\obj\x86\Debug\GXPEngine.csproj.CoreCompileInputs.cache
 C:\Users\bolde\Documents\GitHub\ProjectFinalApproach_CMGT\GXPEngine\obj\x86\Debug\GXPEngine.exe
 C:\Users\bolde\Documents\GitHub\ProjectFinalApproach_CMGT\GXPEngine\obj\x86\Debug\GXPEngine.pdb
+C:\Users\adria\OneDrive\Documents\Github\ProjectFinalApproach_CMGT\GXPEngine\bin\Debug\GXPEngine.exe.config
+C:\Users\adria\OneDrive\Documents\Github\ProjectFinalApproach_CMGT\GXPEngine\bin\Debug\GXPEngine.exe
+C:\Users\adria\OneDrive\Documents\Github\ProjectFinalApproach_CMGT\GXPEngine\bin\Debug\GXPEngine.pdb
+C:\Users\adria\OneDrive\Documents\Github\ProjectFinalApproach_CMGT\GXPEngine\obj\x86\Debug\GXPEngine.csproj.AssemblyReference.cache
+C:\Users\adria\OneDrive\Documents\Github\ProjectFinalApproach_CMGT\GXPEngine\obj\x86\Debug\GXPEngine.csproj.SuggestedBindingRedirects.cache
+C:\Users\adria\OneDrive\Documents\Github\ProjectFinalApproach_CMGT\GXPEngine\obj\x86\Debug\GXPEngine.csproj.CoreCompileInputs.cache
+C:\Users\adria\OneDrive\Documents\Github\ProjectFinalApproach_CMGT\GXPEngine\obj\x86\Debug\GXPEngine.exe
+C:\Users\adria\OneDrive\Documents\Github\ProjectFinalApproach_CMGT\GXPEngine\obj\x86\Debug\GXPEngine.pdb
