@@ -153,11 +153,11 @@ namespace GXPEngine
 
                 if (Input.GetKey(Key.D))
                 {
-                    if (Input.GetKey(Key.LEFT_SHIFT))
+                    /*if (Input.GetKey(Key.LEFT_SHIFT))
                     {
                         isRunning = true;
                         isWalking = false;
-                    }
+                    }*/
 
                     if (isRunning)
                     {
@@ -167,19 +167,20 @@ namespace GXPEngine
                     {
                         isWalking = true;
                         xSpeed += walkingSpeed;
-                    } 
-                    animations.Mirror(false, false);
+                    }
+                   /* animations.Mirror(false, false);
                     if (attackHitBox.x < 0)
-                        attackHitBox.x = attackHitBox.x + attackHitBox.width;
+                        attackHitBox.x = attackHitBox.x + attackHitBox.width;*/
+                    velocity.x = 3;
                 }
 
                 if (Input.GetKey(Key.A))
                 {
-                    if (Input.GetKey(Key.LEFT_SHIFT))
+                    /*if (Input.GetKey(Key.LEFT_SHIFT))
                     {
                         isRunning = true;
                         isWalking = false;
-                    }
+                    }*/
 
                     if (isRunning)
                     {
@@ -190,9 +191,10 @@ namespace GXPEngine
                         isWalking = true;
                         xSpeed -= walkingSpeed;
                     }
-                    animations.Mirror(true, false);
+                    /*animations.Mirror(true, false);
                     if (attackHitBox.x > -attackHitBox.width)
-                        attackHitBox.x = attackHitBox.x - attackHitBox.width;
+                        attackHitBox.x = attackHitBox.x - attackHitBox.width;*/
+                    velocity.x = -3;
                 }
             }
 
@@ -201,8 +203,34 @@ namespace GXPEngine
                 isWalking = false;
                 isRunning = false;
             }
-            
-            MoveUntilCollision(xSpeed, 0, currentLevel.GetTiles(this));
+
+            if (velocity.y <= 15)
+                velocity.y += 1;
+
+
+            Vec2 velocityRotated = velocity;
+            velocityRotated.RotateDegrees(-currentLevel.levelControl.rotationPlayer);
+
+            if (Input.GetKeyDown(Key.SPACE) && canJump)
+            {
+                velocity.y = -40;
+                isJumping = true;
+                canJump = false;
+            }
+
+            if (MoveUntilCollision(0, velocityRotated.y, currentLevel.GetTiles(this)) != null)
+            {
+                velocityRotated.y = 0;
+                isJumping = false;
+                canJump = true;
+            }
+            if (velocity.y > 0)
+            {
+                isJumping = true;
+                canJump = false;
+            }
+
+            MoveUntilCollision(velocityRotated.x, 0, currentLevel.GetTiles(this));
             //this.x += xSpeed;
         }
 
@@ -210,17 +238,21 @@ namespace GXPEngine
         {
             if(velocity.y <= 15)
             velocity.y += 1;
+
+
+            Vec2 velocityRotated = velocity;
+            velocityRotated.RotateDegrees(-currentLevel.levelControl.rotationPlayer);
             
             if (Input.GetKeyDown(Key.SPACE) && canJump)
             {
-                velocity.y = -15;
+                velocity.y = -40;
                 isJumping = true;
                 canJump = false;
             }
 
-            if (MoveUntilCollision(0, velocity.y, currentLevel.GetTiles(this)) != null)
+            if (MoveUntilCollision(0, velocityRotated.y, currentLevel.GetTiles(this)) != null)
             {
-                velocity.y = 0;
+                velocityRotated.y = 0;
                 isJumping = false;
                 canJump = true;
             }

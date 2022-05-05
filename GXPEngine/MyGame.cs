@@ -9,7 +9,7 @@ public class MyGame : Game
 	public MyGame() : base(960, 960, false)		// Create a window that's 800x600 and NOT fullscreen
 	{
 		levelControl = new LevelControl(960,960);
-		levelControl.SetXY(levelControl.width / 2, levelControl.height / 2);
+		levelControl.SetXY(0, 0);
 		
 		AddChild(levelControl);
 	}
