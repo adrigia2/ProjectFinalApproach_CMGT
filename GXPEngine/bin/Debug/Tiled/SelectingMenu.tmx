@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="350" height="150" tilewidth="16" tileheight="16" infinite="0" nextlayerid="4" nextobjectid="6">
+ <imagelayer id="2" name="Image Layer 1">
+  <image source="../Terrain/mellowplatformerparalax2.png" width="512" height="288"/>
+ </imagelayer>
+ <objectgroup id="3" name="Object Layer 1">
+  <object id="1" type="GXPEngine.Button" x="180" y="9.99997" width="147" height="56">
+   <properties>
+    <property name="Load" value="Level_1"/>
+    <property name="SpriteName" value="Tutorial.png"/>
+   </properties>
+  </object>
+  <object id="2" type="GXPEngine.Button" x="180" y="78" width="147" height="56">
+   <properties>
+    <property name="Load" value="Level_2"/>
+    <property name="SpriteName" value="Level_1.png"/>
+   </properties>
+  </object>
+  <object id="3" type="GXPEngine.Button" x="180" y="147.333" width="147" height="56">
+   <properties>
+    <property name="Load" value="Level_3"/>
+    <property name="SpriteName" value="Level_2.png"/>
+   </properties>
+  </object>
+  <object id="4" type="GXPEngine.Button" x="180" y="218" width="147" height="56">
+   <properties>
+    <property name="Load" value="Level_4"/>
+    <property name="SpriteName" value="Level_3.png"/>
+   </properties>
+  </object>
+  <object id="5" type="GXPEngine.Button" x="384" y="240" width="111" height="33.3333">
+   <properties>
+    <property name="Load" value="MainMenu"/>
+    <property name="SpriteName" value="Back.png"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

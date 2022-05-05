@@ -1,0 +1,252 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "Level_2.tmx",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "": {
+            "scaleInDock": 1
+        },
+        "C:/The folder of all/Uni stuff/First year/sez2/Game Design/GXPEngine2022BB/Dirt.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/The folder of all/Uni stuff/First year/sez2/Game Design/GXPEngine2022BB/GXPEngine/bin/Debug/Terrain/Dirt.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/The folder of all/Uni stuff/First year/sez2/Game Design/GXPEngine2022BB/GXPEngine/bin/Debug/Terrain/GXPEngine/bin/Debug/Terrain/Dirt.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/The folder of all/Uni stuff/First year/sez2/Game Design/GXPEngine2022BB/GXPEngine/bin/Debug/Terrain/Jungle_set.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 3
+        },
+        "C:/The folder of all/Uni stuff/First year/sez2/Game Design/GXPEngine2022BB/GXPEngine/bin/Debug/Terrain/MainMenu.tmx": {
+            "scale": 1.0924999999999998,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 510.7551487414189,
+                "y": 179.40503432494285
+            }
+        },
+        "C:/The folder of all/Uni stuff/First year/sez2/Game Design/GXPEngine2022BB/GXPEngine/bin/Debug/Terrain/MainMenu.tmx#Buttons": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/The folder of all/Uni stuff/First year/sez2/Game Design/GXPEngine2022BB/GXPEngine/bin/Debug/Terrain/mapTest_1.tmx": {
+            "scale": 1,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 483,
+                "y": 172.5
+            }
+        },
+        "C:/The folder of all/Uni stuff/First year/sez2/Game Design/GXPEngine2022BB/GXPEngine/bin/Debug/Terrain/mapTest_1.tmx#DirtTileSet": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/The folder of all/Uni stuff/First year/sez2/Game Design/GXPEngine2022BB/GXPEngine/bin/Debug/Terrain/mapTest_1.tmx#mellowplatformertileset": {
+            "scaleInDock": 1
+        },
+        "C:/The folder of all/Uni stuff/First year/sez2/Game Design/GXPEngine2022BB/GXPEngine/bin/Debug/Terrain/mapTest_2.tmx": {
+            "scale": 0.838671875,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 286.16674429436426,
+                "y": 509.73451327433634
+            }
+        },
+        "C:/The folder of all/Uni stuff/First year/sez2/Game Design/GXPEngine2022BB/GXPEngine/bin/Debug/Terrain/mellowautotiles.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/The folder of all/Uni stuff/First year/sez2/Game Design/GXPEngine2022BB/GXPEngine/bin/Debug/Terrain/mellowplatformertileset.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 3
+        },
+        "C:/The folder of all/Uni stuff/First year/sez2/Game Design/GXPEngine2022BB/GXPEngine/bin/Debug/Terrain/spritesheet.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 4
+        },
+        "C:/The folder of all/Uni stuff/First year/sez2/Game Design/GXPEngine2022BB/mapTest_1.tmx": {
+            "scale": 1.0374131944444442,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 520.525479039411,
+                "y": 421.24006359300483
+            }
+        },
+        "LevelSelecter.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 428.66666666666663,
+                "y": 272
+            }
+        },
+        "LevelSelecter.tmx#other btn copy 2": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Level_1.tmx": {
+            "scale": 1,
+            "selectedLayer": 7,
+            "viewCenter": {
+                "x": 4472,
+                "y": 2165
+            }
+        },
+        "Level_1.tmx#Alian Tree": {
+            "scaleInDock": 1
+        },
+        "Level_1.tmx#mellowautotiles": {
+            "scaleInDock": 1
+        },
+        "Level_1.tmx#mellowplatformertileset": {
+            "scaleInDock": 1.5
+        },
+        "Level_2.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 3547.333333333333,
+                "y": 678.6666666666666
+            }
+        },
+        "Level_2.tmx#Alian Tree": {
+            "scaleInDock": 1
+        },
+        "Level_2.tmx#mellowautotiles": {
+            "scaleInDock": 2
+        },
+        "Level_2.tmx#mellowplatformertileset": {
+            "scaleInDock": 1.5
+        },
+        "Level_2.tmx#pushableObjects": {
+            "scaleInDock": 1
+        },
+        "Level_3.tmx": {
+            "scale": 0.75,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 2262.6666666666665,
+                "y": 886.6666666666665
+            }
+        },
+        "Level_3.tmx#Alian Tree": {
+            "scaleInDock": 1
+        },
+        "Level_3.tmx#mellowautotiles": {
+            "scaleInDock": 2
+        },
+        "Level_3.tmx#mellowplatformertileset": {
+            "scaleInDock": 1.5
+        },
+        "Level_3.tmx#pushableObjects": {
+            "scaleInDock": 1
+        },
+        "Level_4.tmx": {
+            "scale": 1,
+            "selectedLayer": 8,
+            "viewCenter": {
+                "x": 1589,
+                "y": 1648
+            }
+        },
+        "Level_4.tmx#Alian Tree": {
+            "scaleInDock": 1
+        },
+        "Level_4.tmx#mellowautotiles": {
+            "scaleInDock": 2
+        },
+        "Level_4.tmx#mellowplatformertileset": {
+            "scaleInDock": 1.5
+        },
+        "Level_4.tmx#pushableObjects": {
+            "scaleInDock": 1
+        },
+        "MainMenu.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 366.66666666666663,
+                "y": 117.33333333333334
+            }
+        },
+        "MainMenu.tmx#Buttons": {
+            "scaleInDock": 1
+        },
+        "MainMenu.tmx#Rounded Rectangle 1 copy 2": {
+            "scaleInDock": 1
+        },
+        "MainMenu.tmx#other btn copy 2": {
+            "scaleInDock": 1,
+            "scaleInEditor": 4
+        },
+        "SelectingMenu.tmx": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 355,
+                "y": 145
+            }
+        },
+        "Settings.tmx": {
+            "scale": 2,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 252.5,
+                "y": 149
+            }
+        }
+    },
+    "last.externalTilesetPath": "C:/The folder of all/Uni stuff/First year/sez2/Game Design/GXPEngine2022BB/GXPEngine/bin/Debug/Terrain",
+    "last.imagePath": "C:/Users/Yukki/Documents/GitHub/GameDesign/GXPEngine2022BB/GXPEngine/bin/Debug/Terrain",
+    "map.height": 50,
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 50,
+    "mapScene.enableWorlds": true,
+    "openFiles": [
+        "MainMenu.tmx",
+        "SelectingMenu.tmx",
+        "Level_1.tmx",
+        "Level_2.tmx",
+        "Level_3.tmx",
+        "Level_4.tmx",
+        "Settings.tmx"
+    ],
+    "project": "GameDesign.tiled-project",
+    "property.type": "bool",
+    "recentFiles": [
+        "MainMenu.tmx",
+        "SelectingMenu.tmx",
+        "Level_1.tmx",
+        "Settings.tmx",
+        "Level_4.tmx",
+        "Level_3.tmx",
+        "Level_2.tmx",
+        "LevelSelecter.tmx",
+        "C:/The folder of all/Uni stuff/First year/sez2/Game Design/GXPEngine2022BB/GXPEngine/bin/Debug/Terrain/mapTest_1.tmx",
+        "C:/The folder of all/Uni stuff/First year/sez2/Game Design/GXPEngine2022BB/GXPEngine/bin/Debug/Terrain/MainMenu.tmx",
+        "C:/The folder of all/Uni stuff/First year/sez2/Game Design/GXPEngine2022BB/GXPEngine/bin/Debug/Terrain/mellowplatformertileset.tsx",
+        "C:/The folder of all/Uni stuff/First year/sez2/Game Design/GXPEngine2022BB/GXPEngine/bin/Debug/Terrain/Jungle_set.tsx"
+    ],
+    "textEdit.monospace": true,
+    "tileset.embedInMap": true,
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.spacing": 0,
+    "tileset.tileSize": {
+        "height": 64,
+        "width": 64
+    }
+}

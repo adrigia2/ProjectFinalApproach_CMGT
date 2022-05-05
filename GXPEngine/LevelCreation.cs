@@ -122,7 +122,7 @@ namespace GXPEngine
         {
             if (sprite is Box box)
             {
-                box.level = this;
+                box.SetLevel(this);
             }
 
         }
