@@ -10,7 +10,6 @@ namespace GXPEngine
 {
     public class LevelControl : Sprite
     {
-        int state = -1;
         LevelCreation level = new LevelCreation();
         Camera camera;
 
@@ -19,7 +18,7 @@ namespace GXPEngine
         {
             this.collider.isTrigger = false;
 
-            level.CreateLevel("TestMap2");
+            LoadLevel("TestMap2");
             level.SetXY(0 - this.width / 2, 0 - this.height / 2);
             level.SetLevelControl(this);
 
@@ -34,28 +33,40 @@ namespace GXPEngine
 
         void Update()
         {
-            bool something = false;
             if (Input.GetKeyDown(Key.RIGHT))
             {
-                something = true;
-                state++;
                 rotationPlayer -= 90f;
-                if (rotationPlayer < 0)
-                    rotationPlayer += 360;
-                //camera.rotation = -rotationPlayer;
                 camera.rotation = -rotationPlayer;
             }
             if (Input.GetKeyDown(Key.LEFT))
             {
-                state--;
-                something = true;
                 rotationPlayer += 90f;
-                if (rotationPlayer == 360)
-                    rotationPlayer = 0;
                 camera.rotation = -rotationPlayer;
             }
 
             //Console.WriteLine(rotationPlayer);
+        }
+
+        public void LoadLevel(string currentSceneName)
+        {
+            RemoveAllChildren();
+            level = new LevelCreation();
+            level.SetLevelControl(this);
+            level.SetXY(0 - this.width / 2, 0 - this.height / 2);
+            level.CreateLevel(currentSceneName);
+            AddChild(level);
+        }
+
+        private void RemoveAllChildren()
+        {
+            List<GameObject> children = this.GetChildren();
+            foreach (GameObject child in children)
+            {
+                if (child != camera)
+                    child.Remove();
+            }
+
+            rotationPlayer = 0;
         }
     }
 }
