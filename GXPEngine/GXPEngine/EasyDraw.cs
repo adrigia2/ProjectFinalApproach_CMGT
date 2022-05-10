@@ -7,7 +7,8 @@ namespace GXPEngine
 
 	/// <summary>
 	/// Creates an easy-to-use layer on top of .NET's System.Drawing methods.
-	/// The API is inspired by Processing: internal states are maintained for font, fill/stroke color, etc., 
+	/// The API is inspired by Processing: internal 
+	/// s are maintained for font, fill/stroke color, etc., 
 	/// and everything works with simple methods that have many overloads.
 	/// </summary>
 	public class EasyDraw : Canvas 

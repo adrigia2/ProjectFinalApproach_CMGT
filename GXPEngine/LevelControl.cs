@@ -11,6 +11,11 @@ namespace GXPEngine
     public class LevelControl : Sprite
     {
         int state = -1;
+        public bool toRotate=false;
+        float start, end;
+        int timeMil=500;
+
+
         LevelCreation level = new LevelCreation();
         Camera camera;
 
@@ -28,34 +33,71 @@ namespace GXPEngine
             //setting up the camera was easy, i just moved the level control to 0,0 in MyGame
             camera = new Camera(0, 0, 960, 960);
             game.AddChild(camera);
-
+            
             this.SetOrigin(this.width / 2, this.height / 2);
         }
 
         void Update()
         {
-            bool something = false;
+
+            Lerp();
+
             if (Input.GetKeyDown(Key.RIGHT))
             {
-                something = true;
-                state++;
+                start =-rotationPlayer;
                 rotationPlayer -= 90f;
                 if (rotationPlayer < 0)
                     rotationPlayer += 360;
+                end =- rotationPlayer;
+
                 //camera.rotation = -rotationPlayer;
-                camera.rotation = -rotationPlayer;
+                toRotate = true;
+                //camera.rotation = -rotationPlayer;
             }
             if (Input.GetKeyDown(Key.LEFT))
             {
-                state--;
-                something = true;
+                start = -rotationPlayer;
                 rotationPlayer += 90f;
                 if (rotationPlayer == 360)
                     rotationPlayer = 0;
-                camera.rotation = -rotationPlayer;
+                end= -rotationPlayer;
+                toRotate = true;
+
+                //camera.rotation = -rotationPlayer;
             }
+
+
 
             //Console.WriteLine(rotationPlayer);
         }
+
+        void Lerp()
+        {
+            if (toRotate == false)
+            {
+                state = 0;
+                return;
+            }
+
+            if (start == -270 && end == 0)
+                end = -360;
+            else
+                if (start == 0 && end == -270)
+                end = +90;
+
+
+            state+=Time.deltaTime;
+            float change = end - start;
+            camera.rotation=start+change/timeMil*state;
+
+            if (state > timeMil)
+            {
+                camera.rotation = end;
+                toRotate= false;
+            }
+            Console.WriteLine("start: "+start +" end: "+end);
+        }
+
     }
+   
 }
