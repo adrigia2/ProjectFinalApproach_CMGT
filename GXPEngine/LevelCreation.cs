@@ -38,35 +38,6 @@ namespace GXPEngine
             this.levelControl = levelControl;
         }
 
-        public void rotateLevel(float direction)
-        {
-            switch (direction)
-            { 
-                case 1: //-90
-                    GameObject[,] rotatedMap = new GameObject[loader.map.Height, loader.map.Width];
-
-                    try
-                    {
-                        for (int i = 0; i <= loader.map.Height; i++)
-                        {
-                            for (int j = 0; j <= loader.map.Width; j++)
-                            {
-                                if (gameObjects[i, j] != null) surroundingTiles.Add(gameObjects[i, j]);
-                            }
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                    }
-
-                    break;
-
-            
-            }
-            
-        }
-
 
         public void CreateLevel(String levelName)
         {
@@ -120,9 +91,9 @@ namespace GXPEngine
 
         private void Tileloader_OnObjectCreated(Sprite sprite, TiledObject obj)
         {
-            if (sprite is Box box)
+            if (sprite is Player p)
             {
-                box.SetLevel(this);
+                p.SetLevel(this);
             }
 
         }
