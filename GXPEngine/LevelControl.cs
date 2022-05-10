@@ -64,18 +64,7 @@ namespace GXPEngine
                 toRotate = true;
 
                 //camera.rotation = -rotationPlayer;
-            if (Input.GetKeyDown(Key.RIGHT))
-            {
-                rotationPlayer -= 90f;
-                camera.rotation = -rotationPlayer;
             }
-            if (Input.GetKeyDown(Key.LEFT))
-            {
-                rotationPlayer += 90f;
-                camera.rotation = -rotationPlayer;
-            }
-
-
 
             //Console.WriteLine(rotationPlayer);
         }
