@@ -46,7 +46,7 @@ namespace GXPEngine
         public void Update()
         {
 
-            rotation = -currentLevel.levelControl.rotationPlayer;
+           // rotation = -currentLevel.levelControl.rotationPlayer;
 
             if (currentLevel == null)
                 return;
