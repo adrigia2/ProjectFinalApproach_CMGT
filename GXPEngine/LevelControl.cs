@@ -96,6 +96,11 @@ namespace GXPEngine
             Console.WriteLine("start: "+start +" end: "+end);
         }
 
+        public void setCameraRotation(float rotation)
+        {
+            camera.rotation = rotation;
+        }
+
         public void LoadLevel(string currentSceneName)
         {
             RemoveAllChildren();

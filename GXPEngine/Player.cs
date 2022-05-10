@@ -71,6 +71,8 @@ namespace GXPEngine
                     if(!laser.invisible)
                     {
                         currentLevel.levelControl.LoadLevel("TestMap2");
+                        currentLevel.levelControl.setCameraRotation(0);
+
                     }
                 }
             }
