@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="60" height="60" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="8">
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="60" height="60" tilewidth="16" tileheight="16" infinite="0" nextlayerid="5" nextobjectid="16">
  <tileset firstgid="1" name="sheet" tilewidth="16" tileheight="16" tilecount="136" columns="17">
   <image source="TileSets/sheet.png" width="272" height="128"/>
  </tileset>
@@ -196,7 +196,9 @@
 </data>
  </layer>
  <objectgroup id="3" name="Object test layer">
-  <object id="3" type="GXPEngine.Player" x="460" y="371" width="16" height="16"/>
   <object id="7" type="GXPEngine.Laser" gid="9" x="556.509" y="734.595" width="16" height="429.6"/>
+  <object id="13" type="GXPEngine.Door" gid="46" x="355.298" y="486.435" width="256" height="16" rotation="-90"/>
+  <object id="14" type="GXPEngine.ButtonDoor" gid="77" x="431.311" y="735.713" width="32" height="16"/>
+  <object id="15" type="GXPEngine.Player" x="476.199" y="359.944" width="29.5" height="57.6"/>
  </objectgroup>
 </map>

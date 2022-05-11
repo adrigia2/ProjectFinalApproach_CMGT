@@ -16,6 +16,8 @@ namespace GXPEngine
 
         public LevelControl levelControl;
 
+        public ConnectionDoorButton connect=new ConnectionDoorButton(); 
+
         TiledLoader loader;
         public String levelName = "TestMap2";
 
@@ -87,7 +89,10 @@ namespace GXPEngine
         private void Tileloader_OnTileCreated(Sprite sprite, int row, int column)
         {
             gameObjects[column, row] = sprite;
+
+
         }
+
 
         private void Tileloader_OnObjectCreated(Sprite sprite, TiledObject obj)
         {
@@ -95,6 +100,17 @@ namespace GXPEngine
             {
                 p.SetLevel(this);
             }
+            if (sprite is ButtonDoor button)
+            {
+                connect.button=button;
+                connect.Connect();
+            }
+            if (sprite is Door door)
+            {
+                connect.door=door;
+                connect.Connect();
+            }
+
 
         }
 

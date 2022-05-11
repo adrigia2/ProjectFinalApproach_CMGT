@@ -48,22 +48,22 @@
             "scaleInDock": 1
         },
         "TestMap.tmx": {
-            "scale": 3,
+            "scale": 1,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 472,
-                "y": 479.8333333333333
+                "x": 419.5,
+                "y": 389
             }
         },
         "TestMap.tmx#sheet": {
             "scaleInDock": 2
         },
         "TestMap2.tmx": {
-            "scale": 0.8945833333333333,
-            "selectedLayer": 2,
+            "scale": 0.75,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 472.845831392641,
-                "y": 480.67070330693997
+                "x": 1207.3333333333333,
+                "y": 193.33333333333337
             }
         },
         "TestMap2.tmx#sheet": {
@@ -77,13 +77,12 @@
     "map.tileWidth": 16,
     "map.width": 60,
     "openFiles": [
-        "TestMap.tmx",
         "TestMap2.tmx"
     ],
     "project": "Project_FinalApproach.tiled-project",
     "recentFiles": [
-        "TestMap.tmx",
         "TestMap2.tmx",
+        "TestMap.tmx",
         "C:/Users/bolde/Documents/GitHub/GameDesign/GXPEngine2022BB/GXPEngine/bin/Debug/Tiled/Level_1.tmx",
         "C:/Users/bolde/Documents/GitHub/GameDesign/GXPEngine2022BB/GXPEngine/bin/Debug/Tiled/Level_3.tmx"
     ],
