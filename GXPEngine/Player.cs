@@ -60,7 +60,7 @@ namespace GXPEngine
                 return;
 
                 Movement();
-                CheckLaserCollision();
+                CheckCollisionObject();
         }
 
         private void CheckCollisionObject()
