@@ -19,7 +19,7 @@ namespace GXPEngine
         public ConnectionDoorButton connect=new ConnectionDoorButton(); 
 
         TiledLoader loader;
-        public String levelName = "TestMap2";
+        public String levelName = "TestMap3";
 
         GameObject[,] gameObjects;
         private List<GameObject> surroundingTiles = new List<GameObject>();

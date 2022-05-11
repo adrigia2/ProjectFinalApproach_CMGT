@@ -76,7 +76,7 @@ namespace GXPEngine
                 {
                     if (!laser.invisible)
                     {
-                        currentLevel.levelControl.LoadLevel("TestMap2");
+                        currentLevel.levelControl.LoadLevel("TestMap3");
                         currentLevel.levelControl.setCameraRotation(0);
 
                     }
@@ -206,7 +206,8 @@ namespace GXPEngine
 
             List<GameObject> elementToCheck=new List<GameObject>();
             elementToCheck.AddRange(currentLevel.GetTiles(this));
-            elementToCheck.Add(currentLevel.connect.door);
+            if(currentLevel.connect.door!=null)
+                elementToCheck.Add(currentLevel.connect.door);
 
             Console.WriteLine(CheckCollisionDoor().Count);
 
