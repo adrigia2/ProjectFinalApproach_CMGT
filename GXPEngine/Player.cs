@@ -1,4 +1,4 @@
-﻿using GXPEngine.Core;
+using GXPEngine.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +16,9 @@ namespace GXPEngine
         private bool addedRestart = false;
         float speed = 1.5f;
         Facing facing;
+
+
+        public float debug = 0;
         private float timer = 0f;
         Vec2 velocityRotated = new Vec2(0, 0);
         Vec2 gravity;
@@ -27,17 +30,22 @@ namespace GXPEngine
         public int maxHP = 6;
 
         private AnimationSprite animations;
+        private Sprite playerSkin;
 
         private Sprite attackHitBox = new Sprite("2 GraveRobber/AttackHitBox.png");
 
         private LevelCreation currentLevel;
 
 
-        public Player(TiledObject obj) : base(new Texture2D(16, 16))
+        public Player(TiledObject obj) : base(new Texture2D(295, 576))
         {
             this.collider.isTrigger = true;
-            animations = new AnimationSprite("2 GraveRobber/GraveRobber_spritesheet.png", 6, 5, -1, false, false);
+
+             animations = new AnimationSprite("2 GraveRobber/sam.png", 1, 1, -1, false, false);
+            //playerSkin = new Sprite("2 GraveRobber/sam_256px.png");
+
             //Console.WriteLine(animations.width);
+            AddChild(animations);
             AddChild(animations);
             SetOrigin(width / 2, height / 2);
             animations.SetOrigin(animations.width / 2, animations.height / 2 + 8);
@@ -55,21 +63,50 @@ namespace GXPEngine
                 CheckLaserCollision();
         }
 
-        private void CheckLaserCollision()
+        private void CheckCollisionObject()
         {
             GameObject[] objects = this.GetCollisions(true, false);
             for (int i = 0; i < objects.Length; i++)
             {
                 if (objects[i] is Laser laser)
                 {
-                    if(!laser.invisible)
+                    if (!laser.invisible)
                     {
-                        currentLevel.levelControl.LoadLevel("TestMap2");
+                        currentLevel.levelControl.LoadLevel("TestMap3");
                         currentLevel.levelControl.setCameraRotation(0);
                     }
                 }
+
+                if (objects[i] is ButtonDoor button)
+                {
+                    ((ButtonDoor)button).isPressed = true;
+                }
             }
         }
+
+        private List<GameObject> CheckCollisionDoor()
+        {
+            var doors = new List<GameObject>();
+            GameObject[] objects = this.GetCollisions(true, false);
+            for (int i = 0; i < objects.Length; i++)
+            {
+                if(objects[i] is Door)
+                doors.Add(objects[i]);
+            }
+            //if(doors.Count>0)
+            //    Console.WriteLine("door detect "+debug++);
+            return doors;
+        }
+
+
+        //private void CheckButtonCollision()
+        //{
+        //    GameObject[] objects = this.GetCollisions(true, false);
+        //    for (int i = 0; i < objects.Length; i++)
+        //    {
+
+        //    }
+        //}
 
         /*private void PlayerDeath()
         {
@@ -174,8 +211,16 @@ namespace GXPEngine
             velocityRotated *= 0.80f;
             velocityRotated.x = Mathf.Clamp(velocityRotated.x, -15, 15);
             velocityRotated.y = Mathf.Clamp(velocityRotated.y, -15, 15);
+            
 
-            if (MoveUntilCollision(0, velocityRotated.y, currentLevel.GetTiles(this)) != null)
+            List<GameObject> elementToCheck=new List<GameObject>();
+            elementToCheck.AddRange(currentLevel.GetTiles(this));
+            if(currentLevel.connect.door!=null)
+                elementToCheck.Add(currentLevel.connect.door);
+
+            Console.WriteLine(CheckCollisionDoor().Count);
+
+            if (MoveUntilCollision(0, velocityRotated.y, elementToCheck) != null /*|| MoveUntilCollision(0, velocityRotated.y, new List<GameObject>() { currentLevel.connect.door })!=null*/)
             {
                 velocityRotated.y = 0;
                 //isJumping = false;

@@ -40,9 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ButtonDoor.cs" />
+    <Compile Include="Door.cs" />
     <Compile Include="GXPEngine\AddOns\Gizmos.cs" />
     <Compile Include="GXPEngine\AddOns\SpriteBatch.cs" />
     <Compile Include="GXPEngine\AddOns\TiledLoader.cs" />
+    <Compile Include="ConnectionDoorButton.cs" />
     <Compile Include="Laser.cs" />
     <Compile Include="LevelControl.cs" />
     <Compile Include="LevelCreation.cs" />

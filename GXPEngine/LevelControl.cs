@@ -24,7 +24,7 @@ namespace GXPEngine
         {
             this.collider.isTrigger = false;
 
-            LoadLevel("TestMap2");
+            LoadLevel("TestMap3");
             level.SetXY(0 - this.width / 2, 0 - this.height / 2);
             level.SetLevelControl(this);
 
