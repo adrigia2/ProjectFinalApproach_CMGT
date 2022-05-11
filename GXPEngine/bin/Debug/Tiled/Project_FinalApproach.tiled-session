@@ -48,11 +48,11 @@
             "scaleInDock": 1
         },
         "TestMap.tmx": {
-            "scale": 3,
+            "scale": 0.5,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 472,
-                "y": 479.8333333333333
+                "x": 928,
+                "y": 668
             }
         },
         "TestMap.tmx#sheet": {
@@ -62,9 +62,12 @@
             "scale": 0.8945833333333333,
             "selectedLayer": 2,
             "viewCenter": {
-                "x": 472.845831392641,
+                "x": 473.96367023754084,
                 "y": 480.67070330693997
             }
+        },
+        "TestMap2.tmx#TileSheet16": {
+            "scaleInDock": 1
         },
         "TestMap2.tmx#sheet": {
             "scaleInDock": 1

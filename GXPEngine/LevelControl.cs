@@ -20,7 +20,7 @@ namespace GXPEngine
         Camera camera;
 
         public float rotationPlayer = 0;
-        public LevelControl(float _width, float _height) : base("Untitled.png")
+        public LevelControl(float _width, float _height) : base("Cubebackground.png")
         {
             this.collider.isTrigger = false;
 
