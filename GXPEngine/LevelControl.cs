@@ -44,11 +44,9 @@ namespace GXPEngine
 
             if (Input.GetKeyDown(Key.RIGHT))
             {
-                start =-rotationPlayer;
+                start = -rotationPlayer;
                 rotationPlayer -= 90f;
-                if (rotationPlayer < 0)
-                    rotationPlayer += 360;
-                end =- rotationPlayer;
+                end = -rotationPlayer;
 
                 //camera.rotation = -rotationPlayer;
                 toRotate = true;
@@ -58,8 +56,6 @@ namespace GXPEngine
             {
                 start = -rotationPlayer;
                 rotationPlayer += 90f;
-                if (rotationPlayer == 360)
-                    rotationPlayer = 0;
                 end= -rotationPlayer;
                 toRotate = true;
 
@@ -71,27 +67,23 @@ namespace GXPEngine
 
         void Lerp()
         {
-            if (toRotate == false)
+            if (!toRotate)
             {
                 state = 0;
                 return;
             }
-
-            if (start == -270 && end == 0)
-                end = -360;
-            else
-                if (start == 0 && end == -270)
-                end = +90;
+            if (start == 0 && end == -270)
+                end += 360;
 
 
-            state+=Time.deltaTime;
+            state += Time.deltaTime;
             float change = end - start;
             camera.rotation=start+change/timeMil*state;
 
             if (state > timeMil)
             {
                 camera.rotation = end;
-                toRotate= false;
+                toRotate = false;
             }
             Console.WriteLine("start: "+start +" end: "+end);
         }

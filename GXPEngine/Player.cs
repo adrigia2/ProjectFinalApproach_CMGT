@@ -8,16 +8,17 @@ using TiledMapParser;
 
 namespace GXPEngine
 {
+    public enum Facing {LEFT, RIGHT, JUMPING, IDLE};
     class Player : Sprite
     {
-
         private bool isWalking = false;
         private bool canJump = false;
         private bool addedRestart = false;
-
+        float speed = 1.5f;
+        Facing facing;
         private float timer = 0f;
         Vec2 velocityRotated = new Vec2(0, 0);
-
+        Vec2 gravity;
 
         //private String characterName;
 
@@ -35,30 +36,23 @@ namespace GXPEngine
         public Player(TiledObject obj) : base(new Texture2D(16, 16))
         {
             this.collider.isTrigger = true;
-
             animations = new AnimationSprite("2 GraveRobber/GraveRobber_spritesheet.png", 6, 5, -1, false, false);
             //Console.WriteLine(animations.width);
             AddChild(animations);
             SetOrigin(width / 2, height / 2);
             animations.SetOrigin(animations.width / 2, animations.height / 2 + 8);
+            gravity = new Vec2(0, 0.5f);
         }
 
         public void Update()
         {
-
            // rotation = -currentLevel.levelControl.rotationPlayer;
 
             if (currentLevel == null)
                 return;
-            if (HP > 0)
-            {
+
                 Movement();
                 CheckLaserCollision();
-            }
-            else
-            {
-                //PlayerDeath();
-            }
         }
 
         private void CheckLaserCollision()
@@ -72,7 +66,6 @@ namespace GXPEngine
                     {
                         currentLevel.levelControl.LoadLevel("TestMap2");
                         currentLevel.levelControl.setCameraRotation(0);
-
                     }
                 }
             }
@@ -141,48 +134,65 @@ namespace GXPEngine
             if (Input.GetKey(Key.D))
             {
                 isWalking = true;
-                nonRotatedVelocity.x = 3;
+                nonRotatedVelocity.x += speed;
+                facing = Facing.LEFT;
             }
 
             if (Input.GetKey(Key.A))
             {
                 isWalking = true;
-                nonRotatedVelocity.x = -3;
+                nonRotatedVelocity.x += -speed;
+                facing = Facing.RIGHT;
             }
 
             if (Input.GetKeyUp(Key.A) || Input.GetKeyUp(Key.D)) //after releasing either of them it stops running/walking
             {
-                nonRotatedVelocity.x = 0;
+                //do you REALLY need this?
                 isWalking = false;
             }
-
-            if (nonRotatedVelocity.y <= 15)
-                nonRotatedVelocity.y += 1;
-
-            if (Input.GetKeyDown(Key.SPACE) && canJump)
+            
+            if (canJump && Input.GetKeyDown(Key.SPACE))
             {
-                nonRotatedVelocity.y = -80;
-                //isJumping = true;
+                nonRotatedVelocity.y = -10;
                 canJump = false;
+                facing = Facing.JUMPING;
             }
-
+            if (canJump && velocityRotated.y > 0)
+            {
+                canJump = false;
+                facing = Facing.JUMPING;
+                Console.WriteLine("I am falling without jumping");
+            }
+            if (canJump && Input.AnyKey())
+            {
+                facing = Facing.IDLE;
+            }
+            //nonRotatedVelocity.x += (Input.GetKey(Key.D) ? 3 : 0) - (Input.GetKey(Key.A) ? 3 : 0);
+            nonRotatedVelocity += gravity;
             nonRotatedVelocity.RotateDegrees(-currentLevel.levelControl.rotationPlayer);
-            velocityRotated = nonRotatedVelocity;
-
+            velocityRotated += nonRotatedVelocity;
+            velocityRotated *= 0.80f;
+            velocityRotated.x = Mathf.Clamp(velocityRotated.x, -15, 15);
+            velocityRotated.y = Mathf.Clamp(velocityRotated.y, -15, 15);
 
             if (MoveUntilCollision(0, velocityRotated.y, currentLevel.GetTiles(this)) != null)
             {
                 velocityRotated.y = 0;
                 //isJumping = false;
-                canJump = true;
-            }
-            if (velocityRotated.y > 0)
-            {
-                //isJumping = true;
-                canJump = false;
+                if (currentLevel.levelControl.rotationPlayer % 180 == 0)
+                {
+                    canJump = true;
+                }
             }
 
-            MoveUntilCollision(velocityRotated.x, 0, currentLevel.GetTiles(this));
+            if (MoveUntilCollision(velocityRotated.x, 0, currentLevel.GetTiles(this)) != null)
+            {
+                velocityRotated.x = 0;
+                if (currentLevel.levelControl.rotationPlayer % 180 == 90)
+                {
+                    canJump = true;
+                }
+            }
 
             if (Input.GetMouseButtonDown(1))
             {
