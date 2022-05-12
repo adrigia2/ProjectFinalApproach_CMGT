@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="GXPEngine.exe" version="1.0.0.4" publicKeyToken="105eb5ee711aae4e" language="neutral" processorArchitecture="x86" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="GXPEngine" version="0.0.0.0" language="neutral" processorArchitecture="x86" />
+    <commandLine file="GXPEngine.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          Opzioni manifesto Controllo dell'account utente
+          Se si vuole modificare il livello di Controllo dell'account utente di Windows, sostituire il
+          nodo requestedExecutionLevel con uno dei seguenti.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         Se si vuole usare Virtualizzazione file system e registro di sistema per la 
+         compatibilità con le versioni precedenti, eliminare il nodo requestedExecutionLevel.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GXPEngine.exe" size="112608">
+      <assemblyIdentity name="GXPEngine" version="0.0.0.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>5aEPmAebTgUBdkRyzitsL2hXhkp4Q0T/1wHAfaMkS6I=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="GXPEngine.exe.config" size="161">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>1hvekB5xicyX1FodTEqjnUxN4raEGXc+x3QzhQbWWa0=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=LAPTOP-23CV70M4\adria" issuerKeyHash="75af431f4ebb1224767818549094927fa743c284" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>9bCLtxqmXNtzmHQS2mDcETFILGX+rQJGSP9qpJ5skeI=</DigestValue></Reference></SignedInfo><SignatureValue>Io6bGCRJCi/ZYr/uFQrjv3zIw1FccavjLdC62928L9+Wt8hsYNpVxqeu0y6GeSiAM20NmhoJtNmHmA+XRf/HtD6kj1X1VRsLzyWrMA/2AicTJ/BJzTAoz1ceY7Vtt62QVVNOkUiw56Mjg9pIzl9XceV6whSiePCZywpdZ2/pvIY=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>6zOwF6rCaR550m86ua2L/X1/RwQqgWdfktEYfee8zLGxCfA+ICG+XogbWJJ4qXp7MA8LBtS0QqHhYfi3Fdy+FNly0EnxGPxOEUkXqtA1UZrXddP/06NbvCQkj4wIqsb4Go6KgJDEHvsPv2ZVoGeYoJKgrN4qcCuPvK6krXS7QV0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="e2916c9ea46aff484602adfe652c483111dc60da12749873db5ca61ab78bb0f5" Description="" Url=""><as:assemblyIdentity name="GXPEngine.exe" version="1.0.0.4" publicKeyToken="105eb5ee711aae4e" language="neutral" processorArchitecture="x86" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=LAPTOP-23CV70M4\adria</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>vSK5uPp9qfGnq2dz/0AcX8rAGdfWwliXyMGjPBABmcU=</DigestValue></Reference></SignedInfo><SignatureValue>DK7h/xjK48eZL+Fr+JdAtAhqlfCx62VYE6FzunqPVxdcGyMJhkdNSfhjoPJHKKW21nuJkmbwp3okmRmTycaJmyTc/4uA1SKQVxfP4MPulnESJQlb0QFnbQXWq5wgrFXz0Jf51+326Eva2hEJUcS6XnLXE6trIKaMgSOlYr2N/GM=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>6zOwF6rCaR550m86ua2L/X1/RwQqgWdfktEYfee8zLGxCfA+ICG+XogbWJJ4qXp7MA8LBtS0QqHhYfi3Fdy+FNly0EnxGPxOEUkXqtA1UZrXddP/06NbvCQkj4wIqsb4Go6KgJDEHvsPv2ZVoGeYoJKgrN4qcCuPvK6krXS7QV0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB7TCCAVagAwIBAgIQcOagmSxyOalNHTLVkm+33zANBgkqhkiG9w0BAQsFADA1MTMwMQYDVQQDHioATABBAFAAVABPAFAALQAyADMAQwBWADcAMABNADQAXABhAGQAcgBpAGEwHhcNMjIwNTEyMTgzMDUyWhcNMjMwNTEzMDAzMDUyWjA1MTMwMQYDVQQDHioATABBAFAAVABPAFAALQAyADMAQwBWADcAMABNADQAXABhAGQAcgBpAGEwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBAOszsBeqwmkeedJvOrmti/19f0cEKoFnX5LRGH3nvMyxsQnwPiAhvl6IG1iSeKl6ezAPCwbUtEKh4WH4txXcvhTZctBJ8Rj8ThFJF6rQNVGa13XT/9OjW7wkJI+MCKrG+BqOioCQxB77D79mVaBnmKCSoKzeKnArj7yupK10u0FdAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAA4jBv7gFJXNOOHywkLOaTpZe59h0nni2Mx8R420qBDQsuniPV475riaUG1AtkHF2GzwFgv2Fo49Q1CWXDbKyghHQ0WizE+wMYZ32qlIgAnBAOzfVmUctH7s7OEatipVQf4THBwUmHF1K6T9hNSTrsEgEzWi6olegq32AUT+WhV4=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

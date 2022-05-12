@@ -107,10 +107,21 @@
             "selectedLayer": 4,
             "viewCenter": {
                 "x": 792.5,
-                "y": 314
+                "y": 313
             }
         },
         "Level3.tmx#TileSheet16": {
+            "scaleInDock": 1
+        },
+        "Level4.tmx": {
+            "scale": 1.4112165178571427,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 440.40017398869077,
+                "y": 448.5491715765748
+            }
+        },
+        "Level4.tmx#TileSheet16": {
             "scaleInDock": 1
         },
         "MainMenu.tmx": {

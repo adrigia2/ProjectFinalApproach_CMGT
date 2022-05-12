@@ -192,7 +192,6 @@ namespace GXPEngine
 
             surroundingTiles.AddRange(radioactiveBoxes);
 
-            Console.WriteLine(player);
             surroundingTiles.Add(player);
 
 

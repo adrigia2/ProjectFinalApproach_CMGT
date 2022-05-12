@@ -52,9 +52,9 @@ namespace GXPEngine
 
             Lerp();
 
-            //if (level.player.canJump)
-            //{
-            if (!toRotate && Input.GetKeyDown(Key.RIGHT))
+            if (level.player.canJump)
+            {
+                if (!toRotate && Input.GetKeyDown(Key.RIGHT))
             {
                 turnNoise.Play();
 
@@ -77,7 +77,7 @@ namespace GXPEngine
             {
                 camera.rotation = (int)(camera.rotation / 90) * 90;
             }
-            //}
+            }
 
             background.rotation = camera.rotation;
         }

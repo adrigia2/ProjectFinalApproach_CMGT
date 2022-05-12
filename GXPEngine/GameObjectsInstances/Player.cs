@@ -12,7 +12,7 @@ namespace GXPEngine
     public class Player : Sprite
     {
         public bool canJump = false;
-        float speed = 1f;
+        float speed = 0.6f;
         Facing facing;
 
         Sound walkNoise = new Sound("Sounds/walking.wav", true, false);
@@ -36,12 +36,11 @@ namespace GXPEngine
         private LevelCreation currentLevel;
 
 
-        public Player(TiledObject obj) : base(new Texture2D(300, 600))
+        public Player(TiledObject obj) : base(new Texture2D(300, 600),true)
         {
             Console.WriteLine("Player: ");
             Console.WriteLine("width: " + width);
             Console.WriteLine("height: " + height);
-            this.collider.isTrigger = true;
             animationsHide = new AnimationSprite("2 GraveRobber/spritesheet2.png", 4, 1, 1, false, false);
             animationsRun = new AnimationSprite("2 GraveRobber/spritesheet3.png", 8, 1, 1, false, false);
             animationsBoh = new AnimationSprite("2 GraveRobber/spritesheet1.png", 3, 1, 1, false, false);
@@ -67,7 +66,7 @@ namespace GXPEngine
             //AddChild(animations);
             SetOrigin(width / 2, height / 2);
 
-            gravity = new Vec2(0, 1f);
+            gravity = new Vec2(0, 0.5f);
         }
 
 
@@ -182,7 +181,7 @@ namespace GXPEngine
 
             if (canJump && Input.GetKeyDown(Key.SPACE))
             {
-                nonRotatedVelocity.y = -20;
+                nonRotatedVelocity.y = -30;
                 canJump = false;
                 facing = Facing.JUMPING;
             }
@@ -229,6 +228,8 @@ namespace GXPEngine
             if (MoveUntilCollision(0, velocityRotated.y, currentLevel.GetTiles(this)) != null /*|| MoveUntilCollision(0, velocityRotated.y, new List<GameObject>() { currentLevel.connect.door })!=null*/)
             {
                 velocityRotated.y = 0;
+                canJump = true;
+
                 if (currentLevel.levelControl.rotationPlayer % 180 == 0)
                 {
                     canJump = true;
@@ -238,6 +239,7 @@ namespace GXPEngine
             if (MoveUntilCollision(velocityRotated.x, 0, currentLevel.GetTiles(this)) != null)
             {
                 velocityRotated.x = 0;
+                    canJump = true;
                 if (currentLevel.levelControl.rotationPlayer % 180 == 90)
                 {
                     canJump = true;
