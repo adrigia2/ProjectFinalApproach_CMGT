@@ -1,5 +1,4 @@
 ﻿using GXPEngine.Core;
-using GXPEngine.GameObjectsInstances;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +15,7 @@ namespace GXPEngine
         private LevelCreation currentLevel;
         public RadioactiveBox(String name, int rows, int cols, TiledObject obj) : base(name, rows, cols, -1, true)
         {
+
         }
 
         void Update()

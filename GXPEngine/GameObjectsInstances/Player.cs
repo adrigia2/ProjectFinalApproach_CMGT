@@ -1,5 +1,4 @@
 using GXPEngine.Core;
-using GXPEngine.GameObjectsInstances;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,34 +26,55 @@ namespace GXPEngine
         public int damage = 2;
         public int maxHP = 6;
 
-        private AnimationSprite animations;
+        private AnimationSprite animationsRun;
+        private AnimationSprite animationsHide;
+        private AnimationSprite animationsBoh;
 
         private LevelCreation currentLevel;
 
 
-        public Player(TiledObject obj) : base(new Texture2D(295, 576))
+        public Player(TiledObject obj) : base(new Texture2D(300, 600))
         {
             Console.WriteLine("Player: ");
             Console.WriteLine("width: "+width);
             Console.WriteLine("height: " + height);
             this.collider.isTrigger = true;
+            animationsHide = new AnimationSprite("2 GraveRobber/spritesheet2.png", 4, 1, 1, false, false);
+            animationsRun = new AnimationSprite("2 GraveRobber/spritesheet3.png",8,1, 1, false, false);
+            animationsBoh = new AnimationSprite("2 GraveRobber/spritesheet1.png", 3, 1, 1, false, false);
 
-             animations = new AnimationSprite("2 GraveRobber/sam.png", 1, 1, -1, false, false);
+            animationsHide.SetOrigin(animationsHide.width / 2, animationsHide.height / 2);
+            animationsHide.SetCycle(1, 4, 1);
+            animationsRun.SetOrigin(animationsHide.width / 2, animationsHide.height / 2);
+            animationsRun.SetCycle(1, 8, 1);
+            animationsBoh.SetOrigin(animationsHide.width / 2, animationsHide.height / 2);
+            animationsBoh.SetCycle(1, 3, 1);
             //playerSkin = new Sprite("2 GraveRobber/sam_256px.png");
 
             //Console.WriteLine(animations.width);
-            AddChild(animations);
-            AddChild(animations);
+            AddChild(animationsHide);
+            AddChild(animationsRun);
+            AddChild(animationsBoh);
+            animationsHide.visible = false;
+            animationsRun.visible = true;
+            animationsBoh.visible = false;
+
+            
+            //AddChild(animations);
             SetOrigin(width / 2, height / 2);
-            animations.SetOrigin(animations.width / 2, animations.height / 2 );
+
             gravity = new Vec2(0, 0.45f);
         }
 
+
         public void Update()
         {
+
+                animationsRun.AnimateFixed();
+
             rotation = -currentLevel.levelControl.rotationPlayer;
 
-            if (currentLevel == null)
+                if (currentLevel == null)
                 return;
 
                 Movement();
@@ -76,6 +96,7 @@ namespace GXPEngine
 
                 if (objects[i] is Boundaries)
                 {
+                    Console.WriteLine("die");
                         currentLevel.levelControl.LoadLevel(currentLevel.levelControl.levelName);
                 }
 
@@ -86,11 +107,12 @@ namespace GXPEngine
 
                 if (objects[i] is DoorButton button)
                 {
-                    ((DoorButton)button).isPressed = true;
+                    button.isPressed = true;
                 }
 
                 if(objects[i] is NextLevelPortal portal)
                 {
+                    Console.WriteLine(portal.nextLevelName);
                     currentLevel.levelControl.LoadLevel(portal.nextLevelName);
                 }
             }
@@ -128,6 +150,26 @@ namespace GXPEngine
             {
                 facing = Facing.IDLE;
             }
+
+            if (Input.GetKey(Key.D) || Input.GetKey(Key.A))
+            {
+                if(Input.GetKey(Key.A))
+                    animationsRun.scaleX = -1;
+                else
+                    animationsRun.scaleX = 1;
+
+
+                animationsBoh.visible = false;
+                animationsHide.visible = false;
+                animationsRun.visible = true;
+            }
+            else
+            {
+                animationsBoh.visible = false;
+                animationsHide.visible = true;
+                animationsRun.visible = false;
+            }
+
             //nonRotatedVelocity.x += (Input.GetKey(Key.D) ? 3 : 0) - (Input.GetKey(Key.A) ? 3 : 0);
             nonRotatedVelocity += gravity;
             nonRotatedVelocity.RotateDegrees(-currentLevel.levelControl.rotationPlayer);

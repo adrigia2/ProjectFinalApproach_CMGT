@@ -1,5 +1,4 @@
 ﻿using GXPEngine.Core;
-using GXPEngine.GameObjectsInstances;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -81,8 +80,14 @@ namespace GXPEngine
 
             loader.OnTileCreated += Tileloader_OnTileCreated;
 
+            loader.addColliders = true;
+
             loader.LoadTileLayers(1);
+            loader.addColliders = false;
+
             loader.LoadTileLayers(0);
+            loader.addColliders = true;
+
             loader.LoadTileLayers(2);
 
             loader.OnTileCreated -= Tileloader_OnTileCreated;
