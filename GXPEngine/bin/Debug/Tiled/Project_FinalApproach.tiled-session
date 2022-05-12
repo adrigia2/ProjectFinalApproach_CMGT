@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Level2_Test.tmx",
+    "activeFile": "Level3.tmx",
     "expandedProjectPaths": [
     ],
     "file.lastUsedOpenFilter": "Tutti i file (*)",
@@ -67,10 +67,10 @@
         },
         "Level1.tmx": {
             "scale": 1,
-            "selectedLayer": 2,
+            "selectedLayer": 4,
             "viewCenter": {
                 "x": 139.5,
-                "y": 343
+                "y": 343.5
             }
         },
         "Level1.tmx#TileSheet16": {
@@ -80,8 +80,8 @@
             "scale": 1.5,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 209.66666666666663,
-                "y": 215.3333333333333
+                "x": 432.3333333333333,
+                "y": 546.3333333333333
             }
         },
         "Level2.tmx#TileSheet16": {
@@ -103,11 +103,11 @@
             "dynamicWrapping": true
         },
         "Level3.tmx": {
-            "scale": 1.5,
+            "scale": 1,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 433,
-                "y": 441
+                "x": 412.5,
+                "y": 567.5
             }
         },
         "Level3.tmx#TileSheet16": {
@@ -147,8 +147,8 @@
             "scale": 0.8945833333333333,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 472.286911970191,
-                "y": 480.67070330693997
+                "x": 474.52258965999073,
+                "y": 481.2296227293898
             }
         },
         "TestMap2.tmx#TileSheet16": {
@@ -195,6 +195,9 @@
         },
         "TestMap5.tmx#sheet": {
             "scaleInDock": 1
+        },
+        "door.tsx": {
+            "scaleInDock": 1
         }
     },
     "last.externalTilesetPath": "C:/Users/adria/Documents/GitHub/ProjectFinalApproach_CMGT/GXPEngine/bin/Debug/2 GraveRobber",
@@ -207,21 +210,21 @@
     "openFiles": [
         "TestMap.tmx",
         "TestMap2.tmx",
-        "TestMap5.tmx",
-        "Level2_Test.tmx",
-        "Level1.tmx"
+        "Level2.tmx",
+        "Level1.tmx",
+        "Level3.tmx"
     ],
     "project": "Project_FinalApproach.tiled-project",
     "property.type": "string",
     "recentFiles": [
-        "Level3.tmx",
-        "MainMenu.tmx",
         "TestMap.tmx",
         "TestMap2.tmx",
-        "TestMap5.tmx",
-        "Level1.tmx",
-        "Level2_Test.tmx",
         "Level2.tmx",
+        "Level1.tmx",
+        "Level3.tmx",
+        "TestMap5.tmx",
+        "Level2_Test.tmx",
+        "MainMenu.tmx",
         "TestMap3.tmx",
         "TestMap4.tmx",
         "C:/Users/bolde/Documents/GitHub/GameDesign/GXPEngine2022BB/GXPEngine/bin/Debug/Tiled/Level_1.tmx",

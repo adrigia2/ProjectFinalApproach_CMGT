@@ -190,6 +190,9 @@ namespace GXPEngine
 
             surroundingTiles.AddRange(radioactiveBoxes);
 
+            Console.WriteLine(player);
+            surroundingTiles.Add(player);
+
 
             //Gizmos.SetColor(0, 1, 0, 1);
             //Gizmos.DrawRectangle(centerPointIndex.x, centerPointIndex.y, Mathf.Abs(topLeft.x - bottomRight.x), Mathf.Abs(topLeft.y - bottomRight.y), this);
