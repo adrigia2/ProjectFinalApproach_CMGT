@@ -3,11 +3,14 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "TestMap2.tmx",
+    "activeFile": "Level2_Test.tmx",
     "expandedProjectPaths": [
     ],
     "file.lastUsedOpenFilter": "Tutti i file (*)",
     "fileStates": {
+        "": {
+            "scaleInDock": 1
+        },
         "#TileSheet16": {
             "scaleInDock": 1
         },
@@ -73,6 +76,21 @@
         "Level2.tmx#TileSheet16": {
             "scaleInDock": 1
         },
+        "Level2_Test.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 432.3333333333333,
+                "y": 379.33333333333326
+            }
+        },
+        "Level2_Test.tmx#TileSheet16": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1
+        },
+        "Level2_Test.tmx#sfsdf": {
+            "dynamicWrapping": true
+        },
         "TestMap.tmx": {
             "scale": 0.5,
             "selectedLayer": 3,
@@ -127,8 +145,8 @@
             "scale": 1,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 305.5,
-                "y": 601
+                "x": 472.5,
+                "y": 480
             }
         },
         "TestMap5.tmx#TileSheet16": {
@@ -138,6 +156,7 @@
             "scaleInDock": 1
         }
     },
+    "last.externalTilesetPath": "C:/Users/adria/Documents/GitHub/ProjectFinalApproach_CMGT/GXPEngine/bin/Debug/2 GraveRobber",
     "last.imagePath": "C:/Users/bolde/Documents/GitHub/ProjectFinalApproach_CMGT/GXPEngine/bin/Debug/Tiled/TileSets",
     "map.height": 67,
     "map.lastUsedFormat": "tmx",
@@ -146,23 +165,30 @@
     "map.width": 120,
     "openFiles": [
         "TestMap.tmx",
-        "TestMap2.tmx"
+        "TestMap2.tmx",
+        "TestMap5.tmx",
+        "Level2_Test.tmx",
+        "Level1.tmx"
     ],
     "project": "Project_FinalApproach.tiled-project",
-    "property.type": "int",
+    "property.type": "string",
     "recentFiles": [
-        "Level2.tmx",
-        "TestMap3.tmx",
-        "Level1.tmx",
-        "TestMap4.tmx",
         "TestMap.tmx",
         "TestMap2.tmx",
+        "TestMap5.tmx",
+        "Level1.tmx",
+        "Level2_Test.tmx",
+        "Level2.tmx",
+        "TestMap3.tmx",
+        "TestMap4.tmx",
         "C:/Users/bolde/Documents/GitHub/GameDesign/GXPEngine2022BB/GXPEngine/bin/Debug/Tiled/Level_1.tmx",
         "C:/Users/bolde/Documents/GitHub/GameDesign/GXPEngine2022BB/GXPEngine/bin/Debug/Tiled/Level_3.tmx"
     ],
     "tileset.embedInMap": true,
+    "tileset.lastUsedFilter": "Tutti i file (*)",
     "tileset.tileSize": {
         "height": 16,
         "width": 16
-    }
+    },
+    "tileset.type": 1
 }

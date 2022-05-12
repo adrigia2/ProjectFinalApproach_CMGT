@@ -21,7 +21,7 @@ namespace GXPEngine
 
         Sprite background = new Sprite("Backgrounds/BackgroundwoutShip.png");
 
-        public string levelName = "Level2";
+        public string levelName = "Level1";
 
         public float rotationPlayer = 0;
         public LevelControl(float _width, float _height) : base(new Texture2D((int)_width, (int)_height))
@@ -51,27 +51,35 @@ namespace GXPEngine
 
             Lerp();
 
-            if (!toRotate && Input.GetKeyDown(Key.RIGHT))
+            if (level.player.canJump)
             {
-                start = -rotationPlayer;
-                rotationPlayer -= 90f;
-                end = -rotationPlayer;
-                toRotate = true;
-            }
-            if (!toRotate && Input.GetKeyDown(Key.LEFT))
-            {
-                start = -rotationPlayer;
-                rotationPlayer += 90f;
-                end = -rotationPlayer;
-                toRotate = true;
-            }
+                if (!toRotate && Input.GetKeyDown(Key.RIGHT))
+                {
+                    start = -rotationPlayer;
+                    rotationPlayer -= 90f;
+                    end = -rotationPlayer;
+                    toRotate = true;
+                }
+                if (!toRotate && Input.GetKeyDown(Key.LEFT))
+                {
+                    start = -rotationPlayer;
+                    rotationPlayer += 90f;
+                    end = -rotationPlayer;
+                    toRotate = true;
+                }
 
-            if (!toRotate && camera.rotation % 90 != 0)
-            {
-                camera.rotation = (int)(camera.rotation / 90) * 90;
+                if (!toRotate && camera.rotation % 90 != 0)
+                {
+                    camera.rotation = (int)(camera.rotation / 90) * 90;
+                }
             }
 
             background.rotation = camera.rotation;
+        }
+
+        public float getCameraRotation()
+        {
+            return camera.rotation;
         }
 
         void Lerp()

@@ -1,17 +1,19 @@
-﻿using System;
+﻿using GXPEngine.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TiledMapParser;
 
-namespace GXPEngine.GameObjectsInstances
+namespace GXPEngine
 {
-    public class NextLevelPortal : AnimationSprite
+    public class NextLevelPortal : Sprite
     {
         public string nextLevelName;
-        public NextLevelPortal(String name, int rows, int cols, TiledObject obj) : base(name, rows, cols, -1, true)
+        public NextLevelPortal(TiledObject obj) : base(new Texture2D(1, 1))
         {
+            collider.isTrigger = true;
             nextLevelName = obj.GetStringProperty("NextLevelName");
         }
     }
