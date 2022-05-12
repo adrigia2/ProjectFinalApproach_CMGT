@@ -36,8 +36,10 @@ namespace GXPEngine
         {
             this.collider.isTrigger = true;
 
-             animations = new AnimationSprite("2 GraveRobber/sam.png", 1, 1, -1, false, false);
+             animations = new AnimationSprite("2 GraveRobber/spritesheetidle.png", 4, 1, -1, false, false);
             //playerSkin = new Sprite("2 GraveRobber/sam_256px.png");
+
+            animations.SetCycle(0, 4, 255);
 
             //Console.WriteLine(animations.width);
             AddChild(animations);
@@ -53,6 +55,8 @@ namespace GXPEngine
 
             if (currentLevel == null)
                 return;
+
+                animations.Animate();
 
                 Movement();
                 CheckCollisionObject();
