@@ -69,8 +69,8 @@
             "scale": 1,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 139.5,
-                "y": 343.5
+                "x": 440.5,
+                "y": 448
             }
         },
         "Level1.tmx#TileSheet16": {
@@ -80,8 +80,8 @@
             "scale": 1.5,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 432.3333333333333,
-                "y": 546.3333333333333
+                "x": 439.66666666666663,
+                "y": 448
             }
         },
         "Level2.tmx#TileSheet16": {
@@ -106,8 +106,8 @@
             "scale": 1,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 412.5,
-                "y": 567.5
+                "x": 792.5,
+                "y": 314
             }
         },
         "Level3.tmx#TileSheet16": {
@@ -147,8 +147,8 @@
             "scale": 0.8945833333333333,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 474.52258965999073,
-                "y": 481.2296227293898
+                "x": 472.286911970191,
+                "y": 480.67070330693997
             }
         },
         "TestMap2.tmx#TileSheet16": {
