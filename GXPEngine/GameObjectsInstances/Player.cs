@@ -13,7 +13,7 @@ namespace GXPEngine
     class Player : Sprite
     {
         private bool canJump = false;
-        float speed = 0.5f;
+        float speed = 2f;
         Facing facing;
 
 
@@ -44,12 +44,12 @@ namespace GXPEngine
             AddChild(animations);
             SetOrigin(width / 2, height / 2);
             animations.SetOrigin(animations.width / 2, animations.height / 2 + 8);
-            gravity = new Vec2(0, 0.45f);
+            gravity = new Vec2(0, 1f);
         }
 
         public void Update()
         {
-           // rotation = -currentLevel.levelControl.rotationPlayer;
+            rotation = -currentLevel.levelControl.rotationPlayer;
 
             if (currentLevel == null)
                 return;
@@ -70,7 +70,13 @@ namespace GXPEngine
                         currentLevel.levelControl.LoadLevel(currentLevel.levelControl.levelName);
                     }
                 }
-                if (objects[i] is RadioactiveBox box)
+
+                if (objects[i] is Boundaries)
+                {
+                        currentLevel.levelControl.LoadLevel(currentLevel.levelControl.levelName);
+                }
+
+                if (objects[i] is RadioactiveBox)
                 {             
                         currentLevel.levelControl.LoadLevel(currentLevel.levelControl.levelName);
                 }

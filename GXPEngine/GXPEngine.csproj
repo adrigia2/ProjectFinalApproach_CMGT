@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="DoorsConfig\DoorButton.cs" />
     <Compile Include="DoorsConfig\Door.cs" />
+    <Compile Include="GameObjectsInstances\Boundaries.cs" />
     <Compile Include="GameObjectsInstances\NextLevelPortal.cs" />
     <Compile Include="GameObjectsInstances\RadioactiveBox.cs" />
     <Compile Include="GXPEngine\AddOns\Gizmos.cs" />
