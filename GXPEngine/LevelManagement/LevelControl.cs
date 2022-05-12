@@ -15,13 +15,14 @@ namespace GXPEngine
         float start, end;
         int timeMil = 500;
 
+        Sound turnNoise = new Sound("Sounds/boing.mp3", false, false);
 
         LevelCreation level = new LevelCreation();
         Camera camera;
 
         Sprite background = new Sprite("Backgrounds/BackgroundwoutShip.png");
 
-        public string levelName = "TestMap2";
+        public string levelName = "TestMap3";
 
         public float rotationPlayer = 0;
         public LevelControl(float _width, float _height) : base(new Texture2D((int)_width, (int)_height))
@@ -53,6 +54,8 @@ namespace GXPEngine
 
             if (!toRotate && Input.GetKeyDown(Key.RIGHT))
             {
+                turnNoise.Play();
+
                 start = -rotationPlayer;
                 rotationPlayer -= 90f;
                 end = -rotationPlayer;
@@ -60,6 +63,8 @@ namespace GXPEngine
             }
             if (!toRotate && Input.GetKeyDown(Key.LEFT))
             {
+                turnNoise.Play();
+
                 start = -rotationPlayer;
                 rotationPlayer += 90f;
                 end = -rotationPlayer;

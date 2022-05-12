@@ -9,6 +9,9 @@ namespace GXPEngine
 {
     public class Door : AnimationSprite
     {
+        Sound doorOpened = new Sound("Sounds/DoorOpen.wav", false, false);
+        Sound buttonPressed = new Sound("Sounds/ButtonOn.wav", false, false);
+
         public DoorButton button;
 
         public int doorNumber;
@@ -22,6 +25,8 @@ namespace GXPEngine
             if (button != null)
                 if (button.isPressed)
                 {
+                    buttonPressed.Play();
+                    doorOpened.Play();
                     visible = false;
                     Destroy();
                 }

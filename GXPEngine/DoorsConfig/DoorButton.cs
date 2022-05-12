@@ -9,6 +9,7 @@ namespace GXPEngine
 {
     public class DoorButton : AnimationSprite
     {
+
         public bool isPressed=false;
 
         public int buttonNumber;

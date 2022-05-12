@@ -15,6 +15,8 @@ namespace GXPEngine
 
         //Map level;
 
+        Sound backgroundAmbient = new Sound("Sounds/ambientBackground.mp3", true ,false);
+
         public LevelControl levelControl;
 
         public ConnectionDoorButton connect=new ConnectionDoorButton(); 
@@ -48,6 +50,7 @@ namespace GXPEngine
             map = loader.map;
             loader.rootObject = this;
 
+            backgroundAmbient.Play();
 
             gameObjects = new GameObject[loader.map.Width, loader.map.Height];
 
