@@ -40,15 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ButtonDoor.cs" />
-    <Compile Include="Door.cs" />
+    <Compile Include="DoorsConfig\DoorButton.cs" />
+    <Compile Include="DoorsConfig\Door.cs" />
+    <Compile Include="GameObjectsInstances\NextLevelPortal.cs" />
+    <Compile Include="GameObjectsInstances\RadioactiveBox.cs" />
     <Compile Include="GXPEngine\AddOns\Gizmos.cs" />
     <Compile Include="GXPEngine\AddOns\SpriteBatch.cs" />
     <Compile Include="GXPEngine\AddOns\TiledLoader.cs" />
-    <Compile Include="ConnectionDoorButton.cs" />
-    <Compile Include="Laser.cs" />
-    <Compile Include="LevelControl.cs" />
-    <Compile Include="LevelCreation.cs" />
+    <Compile Include="DoorsConfig\ConnectionDoorButton.cs" />
+    <Compile Include="GameObjectsInstances\Laser.cs" />
+    <Compile Include="LevelManagement\LevelControl.cs" />
+    <Compile Include="LevelManagement\LevelCreation.cs" />
     <Compile Include="MyGame.cs" />
     <Compile Include="GXPEngine\Core\Canvas.cs" />
     <Compile Include="GXPEngine\Game.cs" />
@@ -88,7 +90,7 @@
     <Compile Include="GXPEngine\SoLoud\Soloud.cs" />
     <Compile Include="GXPEngine\SoLoud\SoloudSoundSystem.cs" />
     <Compile Include="PhysicsClasses\Vec2.cs" />
-    <Compile Include="Player.cs" />
+    <Compile Include="GameObjectsInstances\Player.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

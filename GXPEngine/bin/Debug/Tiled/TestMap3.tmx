@@ -201,7 +201,15 @@
  <objectgroup id="3" name="Object test layer">
   <object id="3" type="GXPEngine.Player" x="151.476" y="264.805" width="29.5" height="57.6"/>
   <object id="8" type="GXPEngine.Laser" gid="270" x="654.878" y="910.096" width="17.1178" height="444.132"/>
-  <object id="14" type="GXPEngine.ButtonDoor" gid="185" x="377.333" y="656" width="16" height="16"/>
-  <object id="19" type="GXPEngine.Door" gid="338" x="432" y="916" width="17.3333" height="261.333"/>
+  <object id="14" type="GXPEngine.DoorButton" gid="185" x="377.333" y="656" width="16" height="16">
+   <properties>
+    <property name="buttonNumber" type="int" value="1"/>
+   </properties>
+  </object>
+  <object id="19" type="GXPEngine.Door" gid="338" x="432" y="916" width="17.3333" height="261.333">
+   <properties>
+    <property name="doorNumber" type="int" value="1"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

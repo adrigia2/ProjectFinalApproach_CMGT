@@ -9,16 +9,18 @@ namespace GXPEngine
 {
     public class Door : AnimationSprite
     {
-        public ButtonDoor buttonDoor;
+        public DoorButton button;
 
+        public int doorNumber;
         public Door(String name, int rows, int cols, TiledObject obj) : base(name, rows, cols, -1, true)
         {
+            doorNumber = obj.GetIntProperty("doorNumber");
         }
 
         void Update()
         {
-            if (buttonDoor != null)
-                if (buttonDoor.isPressed)
+            if (button != null)
+                if (button.isPressed)
                 {
                     visible = false;
                     Destroy();

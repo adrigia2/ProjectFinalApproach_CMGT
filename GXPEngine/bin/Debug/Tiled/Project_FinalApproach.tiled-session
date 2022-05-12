@@ -7,6 +7,9 @@
     "expandedProjectPaths": [
     ],
     "fileStates": {
+        "#TileSheet16": {
+            "scaleInDock": 1
+        },
         "#sheet": {
             "scaleInDock": 2
         },
@@ -51,8 +54,8 @@
             "scale": 0.5,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 928,
-                "y": 668
+                "x": 471,
+                "y": 479
             }
         },
         "TestMap.tmx#sheet": {
@@ -62,7 +65,7 @@
             "scale": 0.8945833333333333,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 501.3507219375874,
+                "x": 502.46856078248726,
                 "y": 480.67070330693997
             }
         },
@@ -71,20 +74,47 @@
         },
         "TestMap2.tmx#sheet": {
             "scaleInDock": 1
+        },
+        "TestMap3.tmx": {
+            "scale": 0.8945833333333333,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 472.286911970191,
+                "y": 480.67070330693997
+            }
+        },
+        "TestMap3.tmx#TileSheet16": {
+            "scaleInDock": 1
+        },
+        "TestMap3.tmx#sheet": {
+            "scaleInDock": 1
+        },
+        "TestMap4.tmx": {
+            "scale": 0.33,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 1783.3333333333335,
+                "y": 827.2727272727271
+            }
+        },
+        "TestMap4.tmx#TileSheet16": {
+            "scaleInDock": 1
         }
     },
     "last.imagePath": "C:/Users/bolde/Documents/GitHub/ProjectFinalApproach_CMGT/GXPEngine/bin/Debug/Tiled/TileSets",
-    "map.height": 60,
+    "map.height": 67,
     "map.lastUsedFormat": "tmx",
     "map.tileHeight": 16,
     "map.tileWidth": 16,
-    "map.width": 60,
+    "map.width": 120,
     "openFiles": [
         "TestMap.tmx",
         "TestMap2.tmx"
     ],
     "project": "Project_FinalApproach.tiled-project",
+    "property.type": "int",
     "recentFiles": [
+        "TestMap4.tmx",
         "TestMap.tmx",
         "TestMap2.tmx",
         "C:/Users/bolde/Documents/GitHub/GameDesign/GXPEngine2022BB/GXPEngine/bin/Debug/Tiled/Level_1.tmx",

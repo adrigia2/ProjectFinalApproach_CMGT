@@ -11,29 +11,38 @@ namespace GXPEngine
     public class LevelControl : Sprite
     {
         int state = -1;
-        public bool toRotate=false;
+        public bool toRotate = false;
         float start, end;
-        int timeMil=500;
+        int timeMil = 500;
 
 
         LevelCreation level = new LevelCreation();
         Camera camera;
 
+        Sprite background = new Sprite("Backgrounds/BackgroundwoutShip.png");
+
+        public string levelName = "TestMap3";
+
         public float rotationPlayer = 0;
-        public LevelControl(float _width, float _height) : base("Cubebackground.png")
+        public LevelControl(float _width, float _height) : base(new Texture2D((int)_width, (int)_height))
         {
             this.collider.isTrigger = false;
 
-            LoadLevel("TestMap3");
-            level.SetXY(0 - this.width / 2, 0 - this.height / 2);
+
+            LoadLevel(levelName);
+            level.SetXY(-480, -480);
             level.SetLevelControl(this);
+
+            background.SetXY(0, 0);
+            background.SetOrigin(background.width / 2, background.height / 2);
+            AddChild(background);
 
             AddChild(level);
 
             //setting up the camera was easy, i just moved the level control to 0,0 in MyGame
-            camera = new Camera(0, 0, 960, 960);
+            camera = new Camera(0, 0, 1920, 1080);
             game.AddChild(camera);
-            
+
             this.SetOrigin(this.width / 2, this.height / 2);
         }
 
@@ -42,27 +51,27 @@ namespace GXPEngine
 
             Lerp();
 
-            if (Input.GetKeyDown(Key.RIGHT))
+            if (!toRotate && Input.GetKeyDown(Key.RIGHT))
             {
                 start = -rotationPlayer;
                 rotationPlayer -= 90f;
                 end = -rotationPlayer;
-
-                //camera.rotation = -rotationPlayer;
                 toRotate = true;
-                //camera.rotation = -rotationPlayer;
             }
-            if (Input.GetKeyDown(Key.LEFT))
+            if (!toRotate && Input.GetKeyDown(Key.LEFT))
             {
                 start = -rotationPlayer;
                 rotationPlayer += 90f;
-                end= -rotationPlayer;
+                end = -rotationPlayer;
                 toRotate = true;
-
-                //camera.rotation = -rotationPlayer;
             }
 
-            //Console.WriteLine(rotationPlayer);
+            if (!toRotate && camera.rotation % 90 != 0)
+            {
+                camera.rotation = (int)(camera.rotation / 90) * 90;
+            }
+
+            background.rotation = camera.rotation;
         }
 
         void Lerp()
@@ -72,25 +81,24 @@ namespace GXPEngine
                 state = 0;
                 return;
             }
-            if (start == 0 && end == -270)
-                end += 360;
 
 
             state += Time.deltaTime;
             float change = end - start;
-            camera.rotation=start+change/timeMil*state;
+            camera.rotation = start + change / timeMil * state;
+
+            
+            Console.WriteLine("background: " + background.rotation);
+            Console.WriteLine("------------------------");
+            Console.WriteLine("camera: " + camera.rotation);
+
 
             if (state > timeMil)
             {
                 camera.rotation = end;
                 toRotate = false;
             }
-            Console.WriteLine("start: "+start +" end: "+end);
-        }
-
-        public void setCameraRotation(float rotation)
-        {
-            camera.rotation = rotation;
+            //Console.WriteLine("start: "+start +" end: "+end);
         }
 
         public void LoadLevel(string currentSceneName)
@@ -98,9 +106,18 @@ namespace GXPEngine
             RemoveAllChildren();
             level = new LevelCreation();
             level.SetLevelControl(this);
-            level.SetXY(0 - this.width / 2, 0 - this.height / 2);
+            level.SetXY(-480, -480);
             level.CreateLevel(currentSceneName);
+            this.levelName = currentSceneName;
             AddChild(level);
+            if (camera != null)
+            {
+                camera.rotation = 0;
+            }
+            if (background != null)
+            {
+                background.rotation = 0;
+            }
         }
 
         private void RemoveAllChildren()
@@ -108,12 +125,12 @@ namespace GXPEngine
             List<GameObject> children = this.GetChildren();
             foreach (GameObject child in children)
             {
-                if (child != camera)
+                if (child != camera && child != background)
                     child.Remove();
             }
 
             rotationPlayer = 0;
         }
     }
-   
+
 }

@@ -6,12 +6,15 @@ public class MyGame : Game
 {
 	LevelControl levelControl;
 
-	public MyGame() : base(960, 960, false)		// Create a window that's 800x600 and NOT fullscreen
+	public MyGame() : base(1920, 1080, true)		// Create a window that's 800x600 and NOT fullscreen
 	{
-		levelControl = new LevelControl(960,960);
+		levelControl = new LevelControl(1920, 1080);
 		levelControl.SetXY(0, 0);
 		
 		AddChild(levelControl);
+
+/*		Sprite background = new Sprite("Backgrounds/BackgroundwoutShip.png");
+		game.AddChild(background);*/
 	}
 
 	// For every game object, Update is called every frame, by the engine:

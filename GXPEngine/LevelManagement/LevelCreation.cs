@@ -1,4 +1,5 @@
 ﻿using GXPEngine.Core;
+using GXPEngine.GameObjectsInstances;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using TiledMapParser;
 
 namespace GXPEngine
 {
-    class LevelCreation : GameObject
+    public class LevelCreation : GameObject
     {
         //Enemy enemy;
         //public Player player;
@@ -19,7 +20,7 @@ namespace GXPEngine
         public ConnectionDoorButton connect=new ConnectionDoorButton(); 
 
         TiledLoader loader;
-        public String levelName = "TestMap3";
+        //public String levelName = "TestMap4";
 
         GameObject[,] gameObjects;
         private List<GameObject> surroundingTiles = new List<GameObject>();
@@ -54,6 +55,7 @@ namespace GXPEngine
 
             loader.OnObjectCreated += Tileloader_OnObjectCreated;
 
+            loader.LoadImageLayers();
             loader.autoInstance = true;
             //loader.addColliders = false;
             loader.LoadObjectGroups();
@@ -84,6 +86,8 @@ namespace GXPEngine
 
             fillingTiles.Freeze();
             this.AddChild(fillingTiles);
+
+            connect.Connect();
         }
 
         private void Tileloader_OnTileCreated(Sprite sprite, int row, int column)
@@ -100,15 +104,17 @@ namespace GXPEngine
             {
                 p.SetLevel(this);
             }
-            if (sprite is ButtonDoor button)
+            if (sprite is RadioactiveBox box)
             {
-                connect.button=button;
-                connect.Connect();
+                box.SetLevel(this);
+            }
+            if (sprite is DoorButton button)
+            {
+                connect.buttons.Add(button);
             }
             if (sprite is Door door)
             {
-                connect.door=door;
-                connect.Connect();
+                connect.doors.Add(door);
             }
 
 
@@ -157,7 +163,10 @@ namespace GXPEngine
                 Console.WriteLine(ex.Message);
             }
 
-
+            foreach (GameObject door in connect.doors)
+            {
+                surroundingTiles.Add(door);
+            }
             //Gizmos.SetColor(0, 1, 0, 1);
             //Gizmos.DrawRectangle(centerPointIndex.x, centerPointIndex.y, Mathf.Abs(topLeft.x - bottomRight.x), Mathf.Abs(topLeft.y - bottomRight.y), this);
 
@@ -169,52 +178,6 @@ namespace GXPEngine
             //System.Console.WriteLine(topLeft + " / " + centerPointIndex + " / " + bottomRight + "/" + surroundingTiles.Count);
             return surroundingTiles;
         }
-
-        public List<GameObject> GetTiles(Sprite sprite, float rotation)
-        {
-            surroundingTiles.Clear();
-
-            //get sprite extents and center
-            Vector2[] extents = sprite.GetExtents();
-            extents[0] = InverseTransformPoint(extents[0].x, extents[0].y);
-            extents[2] = InverseTransformPoint(extents[2].x, extents[2].y);
-            int tileSize = map.TileWidth;
-
-            Vector2 centerPointIndex = new Vector2((int)((extents[0].x + extents[2].x) / (2 * tileSize)), (int)((extents[0].y + extents[2].y) / (2 * tileSize)));
-            Vector2 topLeft = new Vector2(centerPointIndex.x - 1, centerPointIndex.y - 1);
-            topLeft.x = Mathf.Clamp(topLeft.x, 0, map.Width - 1);
-            topLeft.y = Mathf.Clamp(topLeft.y, 0, map.Height - 1);
-
-            Vector2 bottomRight = new Vector2(centerPointIndex.x + 1, centerPointIndex.y + 1);
-            bottomRight.x = Mathf.Clamp(bottomRight.x, 0, map.Width - 1);
-            bottomRight.y = Mathf.Clamp(bottomRight.y, 0, map.Height - 1);
-
-            try
-            {
-                for (int i = (int)topLeft.x - 1; i <= bottomRight.x + 1; i++)
-                {
-                    for (int j = (int)topLeft.y - 1; j <= bottomRight.y + 1; j++)
-                    {
-                        if (gameObjects[i, j] != null) surroundingTiles.Add(gameObjects[i, j]);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-            Console.WriteLine();
-
-            Gizmos.SetColor(0, 1, 0, 1); 
-            Gizmos.DrawRectangle(centerPointIndex.x, centerPointIndex.y, Mathf.Abs(topLeft.x-bottomRight.x), Mathf.Abs(topLeft.y - bottomRight.y), this);
-
-            //Gizmos.SetColor(1, 0, 0, 1);
-            //Gizmos.DrawRectangle(centerPointIndex.x * tileSize + tileSize / 2, centerPointIndex.y * tileSize + tileSize / 2, tileSize * 3, tileSize * 3, this);
-            //System.Console.WriteLine(topLeft + " / " + centerPointIndex + " / " + bottomRight + "/" + surroundingTiles.Count);
-            return surroundingTiles;
-        }
-
-
 
     }
 }
