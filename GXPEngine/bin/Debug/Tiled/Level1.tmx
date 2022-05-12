@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="56" height="56" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="16">
+<map version="1.8" tiledversion="1.8.4" orientation="orthogonal" renderorder="right-down" width="56" height="56" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="17">
  <tileset firstgid="1" name="TileSheet16" tilewidth="16" tileheight="16" tilecount="299" columns="13">
   <image source="TileSets/TileSheet16.png" width="208" height="368"/>
  </tileset>
@@ -194,6 +194,7 @@
   <object id="8" type="GXPEngine.Boundaries" x="-1.33333" y="860" width="897.333" height="34.6666"/>
   <object id="14" type="GXPEngine.RadioactiveBox" gid="277" x="258" y="254.667" width="44.6667" height="44.6667"/>
   <object id="15" type="GXPEngine.Boundaries" x="861.333" y="694.666" width="40" height="165.334"/>
+  <object id="16" type="GXPEngine.NextLevelPortal" x="857.333" y="544" width="47.9997" height="104"/>
  </objectgroup>
  <imagelayer id="7" name="SpaceShip" offsetx="-3" offsety="134">
   <image source="../Backgrounds/spaceship.png" width="75" height="211"/>
