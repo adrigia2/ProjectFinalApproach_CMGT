@@ -15,6 +15,7 @@ namespace GXPEngine
         float start, end;
         int timeMil = 500;
 
+        Sound turnNoise = new Sound("Sounds/boing.mp3", false, false);
 
         LevelCreation level = new LevelCreation();
         Camera camera;

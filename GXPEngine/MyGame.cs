@@ -22,7 +22,7 @@ public class MyGame : Game
 		AddChild(levelControl);
 
 /*		Sprite background = new Sprite("Backgrounds/BackgroundwoutShip.png");
-		game.AddChild(background);*/
+		game.AddChild(background); */
 	}
 
 	// For every game object, Update is called every frame, by the engine:

@@ -15,6 +15,9 @@ namespace GXPEngine
         float speed = 1f;
         Facing facing;
 
+        Sound walkNoise = new Sound("Sounds/walking.wav", true, false);
+        bool isWalking = false;
+        bool soundPlaying = false;
 
         public float debug = 0;
         Vec2 velocityRotated = new Vec2(0, 0);
@@ -51,6 +54,8 @@ namespace GXPEngine
             animationsBoh.SetCycle(1, 3, 1);
             //playerSkin = new Sprite("2 GraveRobber/sam_256px.png");
 
+            animations.SetCycle(0, 4, 255);
+
             //Console.WriteLine(animations.width);
             AddChild(animationsHide);
             AddChild(animationsRun);
@@ -77,6 +82,9 @@ namespace GXPEngine
                 if (currentLevel == null)
                 return;
 
+                animations.Animate();
+
+                Audio();
                 Movement();
                 CheckCollisionObject();
         }
@@ -117,6 +125,42 @@ namespace GXPEngine
                 }
             }
         }
+
+        void Audio()
+        {
+            if (Input.GetKeyDown(Key.D))
+            {
+                isWalking = true;
+            }
+
+            if (Input.GetKeyDown(Key.A))
+            {
+                isWalking = true;
+            }
+
+            if (Input.GetKeyUp(Key.D))
+            {
+                isWalking = false;
+            }
+
+            if (Input.GetKeyUp(Key.A))
+            {
+                isWalking = false;
+            }
+
+            if (isWalking == true && soundPlaying == false)
+            {
+                //walkNoise.Play();
+                soundPlaying = true;
+            }
+            if (!isWalking)
+            {
+                //walkNoise = null;
+            }
+
+        }
+
+
         void Movement()
         {
 
@@ -136,7 +180,7 @@ namespace GXPEngine
                     facing = Facing.RIGHT;
                 }
             }
-            
+
             if (canJump && Input.GetKeyDown(Key.SPACE))
             {
                 nonRotatedVelocity.y = -20;
@@ -209,7 +253,6 @@ namespace GXPEngine
                 Console.WriteLine("--------------");
             }
         }
-
 
         public void SetLevel(LevelCreation _level)
         {

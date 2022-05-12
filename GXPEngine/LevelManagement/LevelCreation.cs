@@ -15,6 +15,7 @@ namespace GXPEngine
         //Map level;
 
         List<RadioactiveBox> radioactiveBoxes = new List<RadioactiveBox>();
+        Sound backgroundAmbient = new Sound("Sounds/ambientBackground.mp3", true ,false);
 
         public LevelControl levelControl;
 
@@ -50,6 +51,7 @@ namespace GXPEngine
             map = loader.map;
             loader.rootObject = this;
 
+            backgroundAmbient.Play();
 
             gameObjects = new GameObject[loader.map.Width, loader.map.Height];
 
