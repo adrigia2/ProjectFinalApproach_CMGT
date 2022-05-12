@@ -10,11 +10,14 @@ namespace GXPEngine
     public class LevelCreation : GameObject
     {
         //Enemy enemy;
-        //public Player player;
+        public Player player=null;
 
         //Map level;
 
+        List<RadioactiveBox> radioactiveBoxes = new List<RadioactiveBox>();
+
         public LevelControl levelControl;
+
 
         public ConnectionDoorButton connect=new ConnectionDoorButton(); 
 
@@ -112,11 +115,13 @@ namespace GXPEngine
         {
             if (sprite is Player p)
             {
+                player = p;
                 p.SetLevel(this);
             }
             if (sprite is RadioactiveBox box)
             {
                 box.SetLevel(this);
+                radioactiveBoxes.Add(box);
             }
             if (sprite is DoorButton button)
             {
@@ -177,11 +182,20 @@ namespace GXPEngine
             {
                 surroundingTiles.Add(door);
             }
+
+            foreach (GameObject door in connect.doors)
+            {
+                surroundingTiles.Add(door);
+            }
+
+            surroundingTiles.AddRange(radioactiveBoxes);
+
+
             //Gizmos.SetColor(0, 1, 0, 1);
             //Gizmos.DrawRectangle(centerPointIndex.x, centerPointIndex.y, Mathf.Abs(topLeft.x - bottomRight.x), Mathf.Abs(topLeft.y - bottomRight.y), this);
 
-           /* Gizmos.SetColor(0, 1, 0, 1);
-            Gizmos.DrawRectangle(centerPointIndex.x * tileSize + tileSize / 2, centerPointIndex.y * tileSize + tileSize / 2, tileSize, tileSize, this);*/
+            /* Gizmos.SetColor(0, 1, 0, 1);
+             Gizmos.DrawRectangle(centerPointIndex.x * tileSize + tileSize / 2, centerPointIndex.y * tileSize + tileSize / 2, tileSize, tileSize, this);*/
 
             //Gizmos.SetColor(1, 0, 0, 1);
             //Gizmos.DrawRectangle(centerPointIndex.x * tileSize + tileSize / 2, centerPointIndex.y * tileSize + tileSize / 2, tileSize * 3, tileSize * 3, this);

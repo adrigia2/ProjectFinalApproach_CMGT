@@ -9,9 +9,9 @@ using TiledMapParser;
 namespace GXPEngine
 {
     public enum Facing {LEFT, RIGHT, JUMPING, IDLE};
-    class Player : Sprite
+    public class Player : Sprite
     {
-        private bool canJump = false;
+        public bool canJump = false;
         float speed = 1f;
         Facing facing;
 
@@ -72,7 +72,7 @@ namespace GXPEngine
 
                 animationsRun.AnimateFixed();
 
-            rotation = -currentLevel.levelControl.rotationPlayer;
+            rotation = currentLevel.levelControl.getCameraRotation();
 
                 if (currentLevel == null)
                 return;
@@ -122,16 +122,19 @@ namespace GXPEngine
 
             Vec2 nonRotatedVelocity = new Vec2(0, 0);
 
-            if (Input.GetKey(Key.D))
+            if (canJump)
             {
-                nonRotatedVelocity.x += speed;
-                facing = Facing.LEFT;
-            }
+                if (Input.GetKey(Key.D))
+                {
+                    nonRotatedVelocity.x += speed;
+                    facing = Facing.LEFT;
+                }
 
-            if (Input.GetKey(Key.A))
-            {
-                nonRotatedVelocity.x += -speed;
-                facing = Facing.RIGHT;
+                if (Input.GetKey(Key.A))
+                {
+                    nonRotatedVelocity.x += -speed;
+                    facing = Facing.RIGHT;
+                }
             }
             
             if (canJump && Input.GetKeyDown(Key.SPACE))
@@ -151,6 +154,7 @@ namespace GXPEngine
                 facing = Facing.IDLE;
             }
 
+            if(canJump)
             if (Input.GetKey(Key.D) || Input.GetKey(Key.A))
             {
                 if(Input.GetKey(Key.A))
