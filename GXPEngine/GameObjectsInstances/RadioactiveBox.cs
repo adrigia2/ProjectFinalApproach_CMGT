@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using TiledMapParser;
 
-namespace GXPEngine.GameObjectsInstances
+namespace GXPEngine
 {
     public class RadioactiveBox : AnimationSprite
     {

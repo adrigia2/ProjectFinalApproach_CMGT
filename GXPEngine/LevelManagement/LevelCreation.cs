@@ -62,15 +62,18 @@ namespace GXPEngine
             //loader.LoadObjectGroups(0);
 
             //Sprite batch
+
+            Console.WriteLine(loader.NumTileLayers);
+
             loader.rootObject = fillingTiles;
             loader.addColliders = false;
-            loader.LoadTileLayers(0);
+
+
 
             loader.rootObject = this;
 
             loader.addColliders = false;
 
-            loader.LoadTileLayers(1);
 
             int childCount = game.GetChildCount();
 
@@ -78,6 +81,8 @@ namespace GXPEngine
 
             loader.OnTileCreated += Tileloader_OnTileCreated;
 
+            loader.LoadTileLayers(1);
+            loader.LoadTileLayers(0);
             loader.LoadTileLayers(2);
 
             loader.OnTileCreated -= Tileloader_OnTileCreated;

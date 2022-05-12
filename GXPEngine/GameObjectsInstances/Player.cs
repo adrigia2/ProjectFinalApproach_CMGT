@@ -13,7 +13,7 @@ namespace GXPEngine
     class Player : Sprite
     {
         private bool canJump = false;
-        float speed = 2f;
+        float speed = 1f;
         Facing facing;
 
 
@@ -34,6 +34,9 @@ namespace GXPEngine
 
         public Player(TiledObject obj) : base(new Texture2D(295, 576))
         {
+            Console.WriteLine("Player: ");
+            Console.WriteLine("width: "+width);
+            Console.WriteLine("height: " + height);
             this.collider.isTrigger = true;
 
              animations = new AnimationSprite("2 GraveRobber/sam.png", 1, 1, -1, false, false);
@@ -43,8 +46,8 @@ namespace GXPEngine
             AddChild(animations);
             AddChild(animations);
             SetOrigin(width / 2, height / 2);
-            animations.SetOrigin(animations.width / 2, animations.height / 2 + 8);
-            gravity = new Vec2(0, 1f);
+            animations.SetOrigin(animations.width / 2, animations.height / 2 );
+            gravity = new Vec2(0, 0.45f);
         }
 
         public void Update()
