@@ -11,7 +11,7 @@ namespace GXPEngine
     {
         float timer = 0f;
         public bool invisible = false;
-        public Laser(String name, int rows, int cols, TiledObject obj) : base(name, rows, cols, -1, true)
+        public Laser(string name, int rows, int cols, TiledObject obj) : base(name, rows, cols, -1, true)
         {
             this.collider.isTrigger = true;
         }
