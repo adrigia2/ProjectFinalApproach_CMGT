@@ -8,7 +8,7 @@ using TiledMapParser;
 
 namespace GXPEngine
 {
-    public enum Facing {LEFT, RIGHT, JUMPING, IDLE};
+    public enum Facing { LEFT, RIGHT, JUMPING, IDLE };
     public class Player : Sprite
     {
         public bool canJump = false;
@@ -39,11 +39,11 @@ namespace GXPEngine
         public Player(TiledObject obj) : base(new Texture2D(300, 600))
         {
             Console.WriteLine("Player: ");
-            Console.WriteLine("width: "+width);
+            Console.WriteLine("width: " + width);
             Console.WriteLine("height: " + height);
             this.collider.isTrigger = true;
             animationsHide = new AnimationSprite("2 GraveRobber/spritesheet2.png", 4, 1, 1, false, false);
-            animationsRun = new AnimationSprite("2 GraveRobber/spritesheet3.png",8,1, 1, false, false);
+            animationsRun = new AnimationSprite("2 GraveRobber/spritesheet3.png", 8, 1, 1, false, false);
             animationsBoh = new AnimationSprite("2 GraveRobber/spritesheet1.png", 3, 1, 1, false, false);
 
             animationsHide.SetOrigin(animationsHide.width / 2, animationsHide.height / 2);
@@ -54,7 +54,6 @@ namespace GXPEngine
             animationsBoh.SetCycle(1, 3, 1);
             //playerSkin = new Sprite("2 GraveRobber/sam_256px.png");
 
-            animations.SetCycle(0, 4, 255);
 
             //Console.WriteLine(animations.width);
             AddChild(animationsHide);
@@ -64,29 +63,29 @@ namespace GXPEngine
             animationsRun.visible = true;
             animationsBoh.visible = false;
 
-            
+
             //AddChild(animations);
             SetOrigin(width / 2, height / 2);
 
-            gravity = new Vec2(0, 0.45f);
+            gravity = new Vec2(0, 1f);
         }
 
 
         public void Update()
         {
 
-                animationsRun.AnimateFixed();
+            animationsRun.AnimateFixed();
+            animationsBoh.AnimateFixed();
 
             rotation = currentLevel.levelControl.getCameraRotation();
 
-                if (currentLevel == null)
+            if (currentLevel == null)
                 return;
 
-                animations.Animate();
 
-                Audio();
-                Movement();
-                CheckCollisionObject();
+            Audio();
+            Movement();
+            CheckCollisionObject();
         }
 
         private void CheckCollisionObject()
@@ -105,12 +104,12 @@ namespace GXPEngine
                 if (objects[i] is Boundaries)
                 {
                     Console.WriteLine("die");
-                        currentLevel.levelControl.LoadLevel(currentLevel.levelControl.levelName);
+                    currentLevel.levelControl.LoadLevel(currentLevel.levelControl.levelName);
                 }
 
                 if (objects[i] is RadioactiveBox)
-                {             
-                        currentLevel.levelControl.LoadLevel(currentLevel.levelControl.levelName);
+                {
+                    currentLevel.levelControl.LoadLevel(currentLevel.levelControl.levelName);
                 }
 
                 if (objects[i] is DoorButton button)
@@ -118,7 +117,7 @@ namespace GXPEngine
                     button.isPressed = true;
                 }
 
-                if(objects[i] is NextLevelPortal portal)
+                if (objects[i] is NextLevelPortal portal)
                 {
                     Console.WriteLine(portal.nextLevelName);
                     currentLevel.levelControl.LoadLevel(portal.nextLevelName);
@@ -198,25 +197,25 @@ namespace GXPEngine
                 facing = Facing.IDLE;
             }
 
-            if(canJump)
-            if (Input.GetKey(Key.D) || Input.GetKey(Key.A))
-            {
-                if(Input.GetKey(Key.A))
-                    animationsRun.scaleX = -1;
+            if (canJump)
+                if (Input.GetKey(Key.D) || Input.GetKey(Key.A))
+                {
+                    if (Input.GetKey(Key.A))
+                        animationsRun.scaleX = -1;
+                    else
+                        animationsRun.scaleX = 1;
+
+
+                    animationsBoh.visible = false;
+                    animationsHide.visible = false;
+                    animationsRun.visible = true;
+                }
                 else
-                    animationsRun.scaleX = 1;
-
-
-                animationsBoh.visible = false;
-                animationsHide.visible = false;
-                animationsRun.visible = true;
-            }
-            else
-            {
-                animationsBoh.visible = false;
-                animationsHide.visible = true;
-                animationsRun.visible = false;
-            }
+                {
+                    animationsBoh.visible = false;
+                    animationsHide.visible = true;
+                    animationsRun.visible = false;
+                }
 
             //nonRotatedVelocity.x += (Input.GetKey(Key.D) ? 3 : 0) - (Input.GetKey(Key.A) ? 3 : 0);
             nonRotatedVelocity += gravity;
@@ -225,7 +224,7 @@ namespace GXPEngine
             velocityRotated *= 0.80f;
             velocityRotated.x = Mathf.Clamp(velocityRotated.x, -30, 15);
             velocityRotated.y = Mathf.Clamp(velocityRotated.y, -30, 15);
-           
+
 
             if (MoveUntilCollision(0, velocityRotated.y, currentLevel.GetTiles(this)) != null /*|| MoveUntilCollision(0, velocityRotated.y, new List<GameObject>() { currentLevel.connect.door })!=null*/)
             {

@@ -54,25 +54,29 @@ namespace GXPEngine
 
             //if (level.player.canJump)
             //{
-                if (!toRotate && Input.GetKeyDown(Key.RIGHT))
-                {
-                    start = -rotationPlayer;
-                    rotationPlayer -= 90f;
-                    end = -rotationPlayer;
-                    toRotate = true;
-                }
-                if (!toRotate && Input.GetKeyDown(Key.LEFT))
-                {
-                    start = -rotationPlayer;
-                    rotationPlayer += 90f;
-                    end = -rotationPlayer;
-                    toRotate = true;
-                }
+            if (!toRotate && Input.GetKeyDown(Key.RIGHT))
+            {
+                turnNoise.Play();
 
-                if (!toRotate && camera.rotation % 90 != 0)
-                {
-                    camera.rotation = (int)(camera.rotation / 90) * 90;
-                }
+                start = -rotationPlayer;
+                rotationPlayer -= 90f;
+                end = -rotationPlayer;
+                toRotate = true;
+            }
+            if (!toRotate && Input.GetKeyDown(Key.LEFT))
+            {
+                turnNoise.Play();
+
+                start = -rotationPlayer;
+                rotationPlayer += 90f;
+                end = -rotationPlayer;
+                toRotate = true;
+            }
+
+            if (!toRotate && camera.rotation % 90 != 0)
+            {
+                camera.rotation = (int)(camera.rotation / 90) * 90;
+            }
             //}
 
             background.rotation = camera.rotation;
@@ -96,7 +100,7 @@ namespace GXPEngine
             float change = end - start;
             camera.rotation = start + change / timeMil * state;
 
-            
+
             Console.WriteLine("background: " + background.rotation);
             Console.WriteLine("------------------------");
             Console.WriteLine("camera: " + camera.rotation);
