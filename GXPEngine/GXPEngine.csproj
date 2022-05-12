@@ -52,6 +52,7 @@
     <Compile Include="GameObjectsInstances\Laser.cs" />
     <Compile Include="LevelManagement\LevelControl.cs" />
     <Compile Include="LevelManagement\LevelCreation.cs" />
+    <Compile Include="MainMenu.cs" />
     <Compile Include="MyGame.cs" />
     <Compile Include="GXPEngine\Core\Canvas.cs" />
     <Compile Include="GXPEngine\Game.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="GXPEngine\SoLoud\SoloudSoundSystem.cs" />
     <Compile Include="PhysicsClasses\Vec2.cs" />
     <Compile Include="GameObjectsInstances\Player.cs" />
+    <Compile Include="SceneManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

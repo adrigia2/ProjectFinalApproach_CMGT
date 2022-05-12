@@ -5,9 +5,17 @@ using System.Drawing;                           // System.Drawing contains drawi
 public class MyGame : Game
 {
 	LevelControl levelControl;
+	SceneManager sceneManager;
 
 	public MyGame() : base(1920, 1080, false)		// Create a window that's 800x600 and NOT fullscreen
 	{
+
+
+		//sceneManager = new SceneManager();
+		//AddChild(sceneManager);
+
+		//sceneManager.LoadLevel("MainMenu");
+
 		levelControl = new LevelControl(1920, 1080);
 		levelControl.SetXY(0, 0);
 		

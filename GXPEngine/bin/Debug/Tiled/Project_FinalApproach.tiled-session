@@ -17,6 +17,17 @@
         "#sheet": {
             "scaleInDock": 2
         },
+        "C:/Users/adria/AppData/Local/Temp/MainMenu_aKPgIL.tmx": {
+            "scale": 1.2894666666666665,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 367.98159445765697,
+                "y": 497.10474614827837
+            }
+        },
+        "C:/Users/adria/AppData/Local/Temp/MainMenu_aKPgIL.tmx#Rounded Rectangle 1 copy 2": {
+            "scaleInDock": 1
+        },
         "C:/Users/bolde/Documents/GitHub/GameDesign/GXPEngine2022BB/GXPEngine/bin/Debug/Tiled/Level_1.tmx": {
             "scale": 1.5,
             "selectedLayer": 6,
@@ -78,10 +89,10 @@
         },
         "Level2_Test.tmx": {
             "scale": 1.5,
-            "selectedLayer": 3,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 432.3333333333333,
-                "y": 379.33333333333326
+                "x": 512.3333333333333,
+                "y": 843.3333333333333
             }
         },
         "Level2_Test.tmx#TileSheet16": {
@@ -90,6 +101,36 @@
         },
         "Level2_Test.tmx#sfsdf": {
             "dynamicWrapping": true
+        },
+        "Level3.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 433,
+                "y": 441
+            }
+        },
+        "Level3.tmx#TileSheet16": {
+            "scaleInDock": 1
+        },
+        "MainMenu.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 269.66666666666663,
+                "y": 359.33333333333326
+            }
+        },
+        "MainMenu.tmx#Rounded Rectangle 1 copy 2": {
+            "scaleInDock": 1
+        },
+        "Settings.tmx": {
+            "scale": 1.5805625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 392.5817549132033,
+                "y": 153.11004784688993
+            }
         },
         "TestMap.tmx": {
             "scale": 0.5,
@@ -173,6 +214,8 @@
     "project": "Project_FinalApproach.tiled-project",
     "property.type": "string",
     "recentFiles": [
+        "Level3.tmx",
+        "MainMenu.tmx",
         "TestMap.tmx",
         "TestMap2.tmx",
         "TestMap5.tmx",
