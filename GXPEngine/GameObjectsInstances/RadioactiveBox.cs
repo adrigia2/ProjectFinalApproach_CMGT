@@ -9,13 +9,13 @@ namespace GXPEngine
 {
     public class RadioactiveBox : AnimationSprite
     {
-        private Vec2 gravity = new Vec2(0, 0.45f);
+        private Vec2 gravity = new Vec2(0, 1f);
         private Vec2 velocityRotated = new Vec2(0, 0);
 
         private LevelCreation currentLevel;
         public RadioactiveBox(String name, int rows, int cols, TiledObject obj) : base(name, rows, cols, -1, true)
         {
-
+            this.collider.isTrigger = true;
         }
 
         void Update()
@@ -37,7 +37,7 @@ namespace GXPEngine
             velocityRotated.y = Mathf.Clamp(velocityRotated.y, -30, 15);
 
 
-            if (MoveUntilCollision(0, velocityRotated.y, currentLevel.GetTiles(this)) != null /*|| MoveUntilCollision(0, velocityRotated.y, new List<GameObject>() { currentLevel.connect.door })!=null*/)
+            if (MoveUntilCollision(0, velocityRotated.y, currentLevel.GetTiles(this)) != null)
             {
                 velocityRotated.y = 0;
             }

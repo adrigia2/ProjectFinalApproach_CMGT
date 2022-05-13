@@ -15,16 +15,21 @@ namespace GXPEngine
         float start, end;
         int timeMil = 500;
 
-        Sound turnNoise = new Sound("Sounds/boing.mp3", false, false);
+        //Sound turnNoise = new Sound("Sounds/boing.mp3", false, false);
 
         LevelCreation level = new LevelCreation();
         Camera camera;
 
         Sprite background = new Sprite("Backgrounds/BackgroundwoutShip.png");
 
-        public string levelName = "Level1";
+        //storing at first the first scene to load, then the current scene to reload
+        public string levelName = "MainMenu";
 
+        //the desiredRotation of the level
         public float rotationPlayer = 0;
+
+        private bool isReseting = false;
+
         public LevelControl(float _width, float _height) : base(new Texture2D((int)_width, (int)_height))
         {
             this.collider.isTrigger = false;
@@ -52,12 +57,15 @@ namespace GXPEngine
 
             Lerp();
 
-            //if (level.player.canJump)
-            //{
+            if(isReseting)
+            {
+                camera.rotation = 0;
+                isReseting = false;
+                toRotate = false;
+            }
+
             if (!toRotate && Input.GetKeyDown(Key.RIGHT))
             {
-                turnNoise.Play();
-
                 start = -rotationPlayer;
                 rotationPlayer -= 90f;
                 end = -rotationPlayer;
@@ -65,8 +73,6 @@ namespace GXPEngine
             }
             if (!toRotate && Input.GetKeyDown(Key.LEFT))
             {
-                turnNoise.Play();
-
                 start = -rotationPlayer;
                 rotationPlayer += 90f;
                 end = -rotationPlayer;
@@ -77,8 +83,6 @@ namespace GXPEngine
             {
                 camera.rotation = (int)(camera.rotation / 90) * 90;
             }
-            //}
-
             background.rotation = camera.rotation;
         }
 
@@ -95,16 +99,15 @@ namespace GXPEngine
                 return;
             }
 
+            
 
             state += Time.deltaTime;
-            float change = end - start;
+            float change = end - start;   
             camera.rotation = start + change / timeMil * state;
-
 
             Console.WriteLine("background: " + background.rotation);
             Console.WriteLine("------------------------");
             Console.WriteLine("camera: " + camera.rotation);
-
 
             if (state > timeMil)
             {
@@ -116,6 +119,7 @@ namespace GXPEngine
 
         public void LoadLevel(string currentSceneName)
         {
+            isReseting = true;
             RemoveAllChildren();
             level = new LevelCreation();
             level.SetLevelControl(this);

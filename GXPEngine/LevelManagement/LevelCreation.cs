@@ -9,18 +9,17 @@ namespace GXPEngine
 {
     public class LevelCreation : GameObject
     {
-        //Enemy enemy;
-        public Player player=null;
+        public Player player = null;
 
         //Map level;
-
-        List<RadioactiveBox> radioactiveBoxes = new List<RadioactiveBox>();
         Sound backgroundAmbient = new Sound("Sounds/ambientBackground.mp3", true ,false);
 
         public LevelControl levelControl;
+        
+        //list of boxes for the collider to be easier i guess
+        List<RadioactiveBox> radioactiveBoxes = new List<RadioactiveBox>();
 
-
-        public ConnectionDoorButton connect=new ConnectionDoorButton(); 
+        public ConnectionDoorButton connect = new ConnectionDoorButton(); 
 
         TiledLoader loader;
         //public String levelName = "TestMap4";
@@ -29,11 +28,7 @@ namespace GXPEngine
         private List<GameObject> surroundingTiles = new List<GameObject>();
         private Map map;
 
-        public List<GameObject> waypoints = new List<GameObject>();
-
         private SpriteBatch fillingTiles = new SpriteBatch();
-
-        //HealthUI healthUi;
         public LevelCreation()
         {
 
@@ -51,7 +46,7 @@ namespace GXPEngine
             map = loader.map;
             loader.rootObject = this;
 
-            backgroundAmbient.Play();
+            backgroundAmbient.Play(volume: 0.25f);
 
             gameObjects = new GameObject[loader.map.Width, loader.map.Height];
 
@@ -134,7 +129,10 @@ namespace GXPEngine
                 connect.doors.Add(door);
             }
 
-
+            if (sprite is Button buttonMenu)
+            {
+                buttonMenu.levelControl = this.levelControl;
+            }
         }
 
         public List<GameObject> GetTiles(Sprite sprite)
@@ -185,16 +183,22 @@ namespace GXPEngine
                 surroundingTiles.Add(door);
             }
 
-            foreach (GameObject door in connect.doors)
+            if(sprite is RadioactiveBox box)
+            {
+                foreach(RadioactiveBox radioactiveBox in radioactiveBoxes)
+                {
+                    surroundingTiles.Add(radioactiveBox);
+                }
+            }
+            /*foreach (GameObject door in connect.doors)
             {
                 surroundingTiles.Add(door);
-            }
+            }*/
 
-            surroundingTiles.AddRange(radioactiveBoxes);
+            /*surroundingTiles.AddRange(radioactiveBoxes);*/
 
-            Console.WriteLine(player);
-            surroundingTiles.Add(player);
-
+            //Console.WriteLine(player); //wtf is this?
+            /*surroundingTiles.Add(player);*/
 
             //Gizmos.SetColor(0, 1, 0, 1);
             //Gizmos.DrawRectangle(centerPointIndex.x, centerPointIndex.y, Mathf.Abs(topLeft.x - bottomRight.x), Mathf.Abs(topLeft.y - bottomRight.y), this);

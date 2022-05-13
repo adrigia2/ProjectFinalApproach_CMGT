@@ -25,8 +25,8 @@ namespace GXPEngine
             if (button != null)
                 if (button.isPressed)
                 {
-                    buttonPressed.Play();
-                    doorOpened.Play();
+                    buttonPressed.Play(volume: 0.25f);
+                    doorOpened.Play(volume: 0.25f);
                     visible = false;
                     Destroy();
                 }
