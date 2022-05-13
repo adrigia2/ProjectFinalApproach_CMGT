@@ -13,7 +13,7 @@
   <image source="TileSets/DangerousObj.png" width="64" height="64"/>
  </tileset>
  <imagelayer id="4" name="Background">
-  <image source="../../../../../../../Desktop/ProjectFinalApproach_CMGT-master/GXPEngine/bin/Debug/Cubebackground.png" width="960" height="960"/>
+  <image source="../Cubebackground.png" width="960" height="960"/>
  </imagelayer>
  <layer id="2" name="Filling tiles" width="60" height="60">
   <data encoding="csv">

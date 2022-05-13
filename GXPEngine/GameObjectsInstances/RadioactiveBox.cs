@@ -20,6 +20,7 @@ namespace GXPEngine
 
         void Update()
         {
+            if(!currentLevel.levelControl.toRotate)
             Movement();
         }
         void Movement()
