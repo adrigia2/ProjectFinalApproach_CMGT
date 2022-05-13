@@ -188,6 +188,8 @@ namespace GXPEngine
             if (MoveUntilCollision(0, velocityRotated.y, currentLevel.GetTiles(this)) != null)
             {
                 velocityRotated.y = 0;
+                canJump = true;
+
                 if (currentLevel.levelControl.rotationPlayer % 180 == 0)
                 {
                     canJump = true;
@@ -198,6 +200,7 @@ namespace GXPEngine
             {
                 //[AnimationSprite::Tiled\TileSets/TileSheet16.png]
                 velocityRotated.x = 0;
+                    canJump = true;
                 if (currentLevel.levelControl.rotationPlayer % 180 == 90)
                 {
                     canJump = true;
